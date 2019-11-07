@@ -10,53 +10,45 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface PureButton {
     /**
-    * The first name
+    * Background color
     */
-    'first': string;
+    'color': string;
     /**
-    * The last name
+    * Background color
     */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+    'href': boolean;
   }
 }
 
 declare global {
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLPureButtonElement extends Components.PureButton, HTMLStencilElement {}
+  var HTMLPureButtonElement: {
+    prototype: HTMLPureButtonElement;
+    new (): HTMLPureButtonElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'pure-button': HTMLPureButtonElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface MyComponent {
+  interface PureButton {
     /**
-    * The first name
+    * Background color
     */
-    'first'?: string;
+    'color'?: string;
     /**
-    * The last name
+    * Background color
     */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+    'href'?: boolean;
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'pure-button': PureButton;
   }
 }
 
@@ -66,7 +58,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
-      'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'pure-button': LocalJSX.PureButton & JSXBase.HTMLAttributes<HTMLPureButtonElement>;
     }
   }
 }
