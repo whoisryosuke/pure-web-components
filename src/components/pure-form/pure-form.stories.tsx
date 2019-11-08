@@ -152,4 +152,24 @@ storiesOf("Pure Form", module)
             <pure-button type="reset">Reset</pure-button>
         </fieldset>
   </pure-form>`
+  )
+  .add(
+    "Grouped form",
+    () => `
+    <pure-form>
+        <fieldset class="pure-group">
+            <input type="text" class="pure-input-1-3" placeholder="Username">
+            <input type="text" class="pure-input-1-3" placeholder="Password">
+            <input type="text" class="pure-input-1-3" placeholder="Email">
+        </fieldset>
+
+        <fieldset class="pure-group">
+            <input type="text" class="pure-input-1-3" placeholder="Another Group">
+            <textarea class="pure-input-1-3" placeholder="Textareas can work here too"></textarea>
+            <input type="text" class="pure-input-1-3" placeholder="Even More Stuff">
+            <input type="text" class="pure-input-1-3" placeholder="Last Item">
+        </fieldset>
+        <pure-button type="submit" class="pure-input-1-3">Sign in</pure-button>
+    </pure-form>
+  `
   );
