@@ -17,6 +17,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "stencil build",
+    "generate": "stencil generate",
     "start": "stencil build --dev --watch --docs",
     "test": "stencil test --spec",
     "test:e2e": "stencil test --e2e",
