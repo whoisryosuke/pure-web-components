@@ -1,0 +1,176 @@
+:host {
+  letter-spacing: normal;
+  text-rendering: optimizespeed;
+  /* Webkit: fixes text-rendering: optimizeLegibility */
+
+  /*
+    Sets the font stack to fonts known to work properly with the above letter
+    and word spacings. See: https://github.com/pure-css/pure/issues/41/
+    The following font stack makes Pure Grids work on all known environments.
+    * FreeSans: Ships with many Linux distros, including Ubuntu
+    * Arimo: Ships with Chrome OS. Arimo has to be defined before Helvetica and
+      Arial to get picked up by the browser, even though neither is available
+      in Chrome OS.
+    * Droid Sans: Ships with all versions of Android.
+    * Helvetica, Arial, sans-serif: Common font stack on OS X and Windows.
+    */
+  font-family: FreeSans, Arimo, "Droid Sans", Helvetica, Arial, sans-serif;
+
+  /* Use flexbox when possible to avoid `letter-spacing` side-effects. */
+  display: flex;
+  flex-flow: row wrap;
+
+  /* Prevents distributing space between rows */
+  align-content: flex-start;
+}
+
+.pure-g {
+  width: 100%;
+}
+
+/* IE10 display: -ms-flexbox (and display: flex in IE 11) does not work inside a table; fall back to block and rely on font hack */
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  table :host {
+    display: block;
+  }
+}
+
+/* Opera as of 12 on Windows needs word-spacing.
+   The ".opera-only" selector is used to prevent actual prefocus styling
+   and is not required in markup.
+*/
+.opera-only :-o-prefocus,
+:host {
+  word-spacing: -0.43em;
+}
+
+.pure-u {
+  display: inline-block;
+  *display: inline;
+  /* IE < 8: fake inline-block */
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto;
+}
+
+/*
+Resets the font family back to the OS/browser's default sans-serif font,
+this the same font stack that Normalize.css sets for the `body`.
+*/
+:host [class *="pure-u"] {
+  font-family: sans-serif;
+}
+
+.pure-u-1 {
+  width: 100%;
+}
+
+/*
+ * Generates classes for a grid of columns, prefixed by size.
+ * The result will be .col-[size]-[col]-[total-columns] E.g. .col-xs-6-12
+ * 
+ * @credit: https://blog.teamtreehouse.com/smarter-sass-mixins-null
+ *
+ * @param {string}	$size			The name of the size target (e.g. xs, sm, md, lg, xl, etc.)
+ * @param {int}		$grid-columns	Amount of columns
+ */
+@mixin grid-generator($grid-columns, $size:false) {
+  @for $i from 1 through $grid-columns {
+    @if($size) {
+      .pure-u-#{$size}-#{$i}-#{$grid-columns} {
+        width: percentage($i / $grid-columns);
+        float: left;
+      }
+    }
+
+    @else {
+      .pure-u-#{$i}-#{$grid-columns} {
+        width: percentage($i / $grid-columns);
+        float: left;
+      }
+    }
+  }
+}
+
+/*
+ * A mixin targeting a specific device width and larger.
+ * These are the available targets: 'xs', 'sm', 'md', 'lg', 'xl'
+ *
+ * @param {string} $media The target media
+ */
+@mixin respond-from($media) {
+  @if $media==xs {
+    @media (min-width: 0px) {
+      @content;
+    }
+  }
+
+  @else if $media==sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $media==md {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @else if $media==lg {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+
+  @else if $media==xl {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+/*
+ * Generate 2, 3, 4, 5 column grids for all viewports
+ */
+@include grid-generator(2);
+@include grid-generator(3);
+@include grid-generator(4);
+@include grid-generator(5);
+
+/*
+ * Generate 12 column grids for each breakpoint
+ */
+@include grid-generator(12, xs);
+
+@include respond-from(sm) {
+  @include grid-generator(2, sm);
+  @include grid-generator(3, sm);
+  @include grid-generator(4, sm);
+  @include grid-generator(5, sm);
+  @include grid-generator(12, sm);
+}
+
+@include respond-from(md) {
+  @include grid-generator(2, md);
+  @include grid-generator(3, md);
+  @include grid-generator(4, md);
+  @include grid-generator(5, md);
+  @include grid-generator(12, md);
+}
+
+@include respond-from(lg) {
+  @include grid-generator(2, lg);
+  @include grid-generator(3, lg);
+  @include grid-generator(4, lg);
+  @include grid-generator(5, lg);
+  @include grid-generator(12, lg);
+}
+
+@include respond-from(xl) {
+  @include grid-generator(10, xl);
+  @include grid-generator(12, xl);
+}

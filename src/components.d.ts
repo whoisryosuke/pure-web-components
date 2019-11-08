@@ -36,6 +36,7 @@ export namespace Components {
     */
     'value': string;
   }
+  interface PureGrid {
     */
     'href': boolean;
   }
@@ -48,6 +49,12 @@ declare global {
   var HTMLPureButtonElement: {
     prototype: HTMLPureButtonElement;
     new (): HTMLPureButtonElement;
+  };
+
+  interface HTMLPureFormElement extends Components.PureForm, HTMLStencilElement {}
+  var HTMLPureFormElement: {
+    prototype: HTMLPureFormElement;
+    new (): HTMLPureFormElement;
   };
   interface HTMLElementTagNameMap {
     'pure-button': HTMLPureButtonElement;
@@ -81,8 +88,11 @@ declare namespace LocalJSX {
     */
     'value'?: string;
   }
+  interface PureGrid {
+    /**
+    * HTML tag/element for form container
     */
-    'href'?: boolean;
+    'as'?: string;
   }
 
   interface IntrinsicElements {
@@ -97,6 +107,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'pure-button': LocalJSX.PureButton & JSXBase.HTMLAttributes<HTMLPureButtonElement>;
+      'pure-grid': LocalJSX.PureGrid & JSXBase.HTMLAttributes<HTMLPureGridElement>;
     }
   }
 }
