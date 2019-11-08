@@ -26,11 +26,15 @@ export namespace Components {
     /**
     * Displays button as link
     */
-    'href': string;
+    'href': string | undefined;
+    /**
+    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+    */
+    'target': string | undefined;
     /**
     * The button or input type (usually submit)
     */
-    'type': string;
+    'type': "submit" | "reset" | "button";
     /**
     * Optional prop for input to show text
     */
@@ -102,11 +106,15 @@ declare namespace LocalJSX {
     /**
     * Displays button as link
     */
-    'href'?: string;
+    'href'?: string | undefined;
+    /**
+    * Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
+    */
+    'target'?: string | undefined;
     /**
     * The button or input type (usually submit)
     */
-    'type'?: string;
+    'type'?: "submit" | "reset" | "button";
     /**
     * Optional prop for input to show text
     */
