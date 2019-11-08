@@ -36,9 +36,25 @@ export namespace Components {
     */
     'value': string;
   }
-  interface PureGrid {
+  interface PureForm {
+    /**
+    * Makes labels and input elements inline inside groups
     */
-    'href': boolean;
+    'aligned': boolean;
+    /**
+    * HTML tag/element for form container
+    */
+    'as': string;
+    /**
+    * Stack form elements
+    */
+    'stacked': boolean;
+  }
+  interface PureGrid {
+    /**
+    * HTML tag/element for form container
+    */
+    'as': string;
   }
 }
 
@@ -56,8 +72,16 @@ declare global {
     prototype: HTMLPureFormElement;
     new (): HTMLPureFormElement;
   };
+
+  interface HTMLPureGridElement extends Components.PureGrid, HTMLStencilElement {}
+  var HTMLPureGridElement: {
+    prototype: HTMLPureGridElement;
+    new (): HTMLPureGridElement;
+  };
   interface HTMLElementTagNameMap {
     'pure-button': HTMLPureButtonElement;
+    'pure-form': HTMLPureFormElement;
+    'pure-grid': HTMLPureGridElement;
   }
 }
 
@@ -88,6 +112,20 @@ declare namespace LocalJSX {
     */
     'value'?: string;
   }
+  interface PureForm {
+    /**
+    * Makes labels and input elements inline inside groups
+    */
+    'aligned'?: boolean;
+    /**
+    * HTML tag/element for form container
+    */
+    'as'?: string;
+    /**
+    * Stack form elements
+    */
+    'stacked'?: boolean;
+  }
   interface PureGrid {
     /**
     * HTML tag/element for form container
@@ -97,6 +135,8 @@ declare namespace LocalJSX {
 
   interface IntrinsicElements {
     'pure-button': PureButton;
+    'pure-form': PureForm;
+    'pure-grid': PureGrid;
   }
 }
 
@@ -107,6 +147,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       'pure-button': LocalJSX.PureButton & JSXBase.HTMLAttributes<HTMLPureButtonElement>;
+      'pure-form': LocalJSX.PureForm & JSXBase.HTMLAttributes<HTMLPureFormElement>;
       'pure-grid': LocalJSX.PureGrid & JSXBase.HTMLAttributes<HTMLPureGridElement>;
     }
   }
