@@ -12,17 +12,52 @@ export class PureButton {
   @Prop() color: string;
 
   /**
-   * Background color
+   * Displays button as link
    */
-  @Prop() href: boolean;
+  @Prop() href: string;
+
+  /**
+   * Is disabled?
+   */
+  @Prop() disabled: boolean;
+
+  /**
+   * HTML element to use as basis
+   */
+  @Prop() as: string;
+
+  /**
+   * The button or input type (usually submit)
+   */
+  @Prop() type: string;
+
+  /**
+   * Optional prop for input to show text
+   */
+  @Prop() value: string;
 
   render() {
-    const { color, href } = this;
-    const TagType = href === undefined ? "button" : ("a" as any);
+    const { color, disabled, href, type, value } = this;
+    // Determine what element will be displayed
+    // Defaults to button, `as` prop takes precedence
+    let TagType = "button";
+    if (href !== undefined) {
+      TagType = "a";
+    }
+    if (this.as !== undefined) {
+      TagType = this.as;
+    }
     return (
-      <TagType class={{ "pure-button": true, [color]: true }}>
-        <slot />
-      </TagType>
+      <Host>
+        <TagType
+          class={{ "pure-button": true, [color]: color !== undefined }}
+          aria-disabled={disabled ? "true" : null}
+          type={type}
+          value={value}
+        >
+          {value === undefined && <slot />}
+        </TagType>
+      </Host>
     );
   }
 }

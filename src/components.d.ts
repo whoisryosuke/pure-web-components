@@ -12,11 +12,30 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface PureButton {
     /**
+    * HTML element to use as basis
+    */
+    'as': string;
+    /**
     * Background color
     */
     'color': string;
     /**
-    * Background color
+    * Is disabled?
+    */
+    'disabled': boolean;
+    /**
+    * Displays button as link
+    */
+    'href': string;
+    /**
+    * The button or input type (usually submit)
+    */
+    'type': string;
+    /**
+    * Optional prop for input to show text
+    */
+    'value': string;
+  }
     */
     'href': boolean;
   }
@@ -38,11 +57,30 @@ declare global {
 declare namespace LocalJSX {
   interface PureButton {
     /**
+    * HTML element to use as basis
+    */
+    'as'?: string;
+    /**
     * Background color
     */
     'color'?: string;
     /**
-    * Background color
+    * Is disabled?
+    */
+    'disabled'?: boolean;
+    /**
+    * Displays button as link
+    */
+    'href'?: string;
+    /**
+    * The button or input type (usually submit)
+    */
+    'type'?: string;
+    /**
+    * Optional prop for input to show text
+    */
+    'value'?: string;
+  }
     */
     'href'?: boolean;
   }

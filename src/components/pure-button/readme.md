@@ -7,10 +7,14 @@
 
 ## Properties
 
-| Property | Attribute | Description      | Type      | Default     |
-| -------- | --------- | ---------------- | --------- | ----------- |
-| `color`  | `color`   | Background color | `string`  | `undefined` |
-| `href`   | `href`    | Background color | `boolean` | `undefined` |
+| Property   | Attribute  | Description                               | Type      | Default     |
+| ---------- | ---------- | ----------------------------------------- | --------- | ----------- |
+| `as`       | `as`       | HTML element to use as basis              | `string`  | `undefined` |
+| `color`    | `color`    | Background color                          | `string`  | `undefined` |
+| `disabled` | `disabled` | Is disabled?                              | `boolean` | `undefined` |
+| `href`     | `href`     | Displays button as link                   | `string`  | `undefined` |
+| `type`     | `type`     | The button or input type (usually submit) | `string`  | `undefined` |
+| `value`    | `value`    | Optional prop for input to show text      | `string`  | `undefined` |
 
 
 ----------------------------------------------
