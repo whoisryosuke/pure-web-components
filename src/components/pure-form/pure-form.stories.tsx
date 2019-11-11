@@ -16,7 +16,7 @@ storiesOf("Pure Form", module)
             <select>
 
 
-            <button type="submit">Sign in</button>
+            <pure-button type="submit">Sign in</pure-button>
         </fieldset>
     </pure-form>
   `
