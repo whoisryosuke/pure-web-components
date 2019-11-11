@@ -36,7 +36,7 @@ export class PureButton {
   /**
    * The button or input type (usually submit)
    */
-  @Prop() type: "submit" | "reset" | "button" = "button";
+  @Prop() type: "submit" | "reset" | "button";
 
   /**
    * Optional prop for input to show text
