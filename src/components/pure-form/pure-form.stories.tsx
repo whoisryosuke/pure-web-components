@@ -172,4 +172,168 @@ storiesOf("Pure Form", module)
         <pure-button type="submit" class="pure-input-1-3">Sign in</pure-button>
     </pure-form>
   `
-  );
+  )
+  .add(
+    "Input Sizing",
+    () => `
+  <div className="example">
+    <pure-form>
+        <input class="pure-input-1" type="text" placeholder=".pure-input-1"><br/>
+        <input class="pure-input-3-4" type="text" placeholder=".pure-input-3-4"><br/>
+        <input class="pure-input-2-3" type="text" placeholder=".pure-input-2-3"><br/>
+        <input class="pure-input-1-2" type="text" placeholder=".pure-input-1-2"><br/>
+        <input class="pure-input-1-3" type="text" placeholder=".pure-input-1-3"><br/>
+        <input class="pure-input-1-4" type="text" placeholder=".pure-input-1-4"><br/>
+    </pure-form>
+
+
+    <pure-form>
+        <div class="pure-g">
+            <div class="pure-u-1-4">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-4">
+            </div>
+
+            <div class="pure-u-3-4">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-3-4">
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-2">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-2">
+            </div>
+
+            <div class="pure-u-1-2">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-2">
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-8">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-8">
+            </div>
+
+            <div class="pure-u-1-8">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-8">
+            </div>
+
+            <div class="pure-u-1-4">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-4">
+            </div>
+
+            <div class="pure-u-1-2">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-2">
+            </div>
+        </div>
+
+        <div class="pure-g">
+            <div class="pure-u-1-5">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1-5">
+            </div>
+
+            <div class="pure-u-2-5">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-2-5">
+            </div>
+
+            <div class="pure-u-2-5">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-2-5">
+            </div>
+
+            <div class="pure-u-1">
+                <input class="pure-input-1" type="text" placeholder=".pure-u-1">
+            </div>
+        </div>
+    </pure-form>
+  </div>
+  `
+  )
+  .add(
+    "Invalid Input",
+    () => `
+    <pure-form>
+        <input type="email" placeholder="Requires an email" required>
+    </pure-form>
+  `
+  )
+  .add(
+    "Disabled Input",
+    () => `
+    <pure-form>
+        <input class="pure-input-xlarge" type="text" placeholder="Disabled input here..." value="Foo bar baz" disabled>
+    </pure-form>
+  `
+  )
+  .add(
+    "Readonly Input",
+    () => `
+    <pure-form>
+        <input class="pure-input-xlarge" type="text" placeholder="Readonly input here..." value="Foo bar baz" readonly>
+    </pure-form>
+  `
+  )
+  .add(
+    "Rounded Input",
+    () => `
+    <pure-form stacked>
+        <label>Subject</label>
+        <input type="text" class="pure-input-rounded" placeholder="Subject" />
+
+        <label>Message</label>
+        <textarea class="pure-input-rounded" rows="5" cols="40" placeholder="Message..."></textarea>
+
+        <button type="submit" class="pure-button pure-input-rounded">Search</button>
+        <input type="reset" class="pure-button pure-input-rounded" value="Reset" />
+    </pure-form>
+  `
+  ).add('Select Inputs', () => `
+  <pure-form>
+        <select class="pure-input-medium">
+            <option>Brazil</option>
+            <option>Canada</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+            <option>Venezuela</option>
+        </select>
+
+        <select multiple="multiple" class="pure-input-large">
+            <option>Brazil</option>
+            <option>Canada</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+            <option>Venezuela</option>
+        </select>
+    </pure-form>
+  `).add('Checkboxes and Radios', () => `
+    <pure-form>
+        <label class="pure-checkbox">
+            <input type="checkbox" value="">
+            Here's option one.
+        </label>
+
+        <label class="pure-radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Here's a radio button. You can choose this one...
+        </label>
+
+        <label class="pure-radio">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            ...Or this one!
+        </label>
+    </pure-form>
+  `).add('Help Text', () => `
+    <pure-form stacked>
+        <fieldset>
+            <label>Last Name</label>
+            <input type="text" />
+            <aside class="pure-form-message">Block help text</aside>
+        </fieldset>
+    </pure-form>
+  `).add('Buttons', () => `
+    <pure-form>
+        <pure-button color="primary" href="#">Anchor</pure-button>
+        <pure-button class="pure-button pure-button-primary">Button</pure-button>
+        <pure-button as="input" color="primary" type="submit" value="Submit"></pure-button>
+        <pure-button as="input" color="primary" type="button" value="Input Button"></pure-button>
+        <pure-button as="input" color="primary" type="reset" value="Reset"></pure-button>
+    </pure-form>
+  `);
