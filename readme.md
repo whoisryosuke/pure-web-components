@@ -76,3 +76,17 @@ Instead, use a prefix that fits your company or any name for a group of related 
 - Run `npm install my-component --save`
 - Add an import to the npm packages `import my-component;`
 - Then you can use the element anywhere in your template, JSX, html etc
+
+# Todo
+
+- ✅ `<pure-button>` component
+- ✅ `<pure-form>` component
+- ✅ `<pure-grid>` component
+- [] `<pure-grid>` story examples
+- [] `<pure-base>` component + story examples
+- [] `<pure-menu>` component + story examples
+- [] `<pure-table>` component + story examples
+- [] `<pure-button-group>` component + swap out in other component stories
+- [] Create documentation
+- - ✅ Test out Storybook Docs and MDX
+- - [] Test out Gatsby using StencilJS and JSON output
