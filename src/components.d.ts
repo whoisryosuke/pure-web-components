@@ -10,6 +10,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface PureBase {}
   interface PureButton {
     /**
     * HTML element to use as basis
@@ -65,6 +66,12 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLPureBaseElement extends Components.PureBase, HTMLStencilElement {}
+  var HTMLPureBaseElement: {
+    prototype: HTMLPureBaseElement;
+    new (): HTMLPureBaseElement;
+  };
+
   interface HTMLPureButtonElement extends Components.PureButton, HTMLStencilElement {}
   var HTMLPureButtonElement: {
     prototype: HTMLPureButtonElement;
@@ -83,6 +90,7 @@ declare global {
     new (): HTMLPureGridElement;
   };
   interface HTMLElementTagNameMap {
+    'pure-base': HTMLPureBaseElement;
     'pure-button': HTMLPureButtonElement;
     'pure-form': HTMLPureFormElement;
     'pure-grid': HTMLPureGridElement;
@@ -90,6 +98,7 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface PureBase {}
   interface PureButton {
     /**
     * HTML element to use as basis
@@ -142,6 +151,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'pure-base': PureBase;
     'pure-button': PureButton;
     'pure-form': PureForm;
     'pure-grid': PureGrid;
@@ -154,6 +164,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'pure-base': LocalJSX.PureBase & JSXBase.HTMLAttributes<HTMLPureBaseElement>;
       'pure-button': LocalJSX.PureButton & JSXBase.HTMLAttributes<HTMLPureButtonElement>;
       'pure-form': LocalJSX.PureForm & JSXBase.HTMLAttributes<HTMLPureFormElement>;
       'pure-grid': LocalJSX.PureGrid & JSXBase.HTMLAttributes<HTMLPureGridElement>;
