@@ -61,6 +61,24 @@ export namespace Components {
     */
     'as': string;
   }
+  interface PureTable {
+    /**
+    * Display different HTML element or component as table wrapper
+    */
+    'as': string | undefined;
+    /**
+    * Add border to table
+    */
+    'bordered': boolean | undefined;
+    /**
+    * Display table horizontally
+    */
+    'horizontal': boolean | undefined;
+    /**
+    * Add stripe to table
+    */
+    'striped': boolean | undefined;
+  }
 }
 
 declare global {
@@ -89,11 +107,18 @@ declare global {
     prototype: HTMLPureGridElement;
     new (): HTMLPureGridElement;
   };
+
+  interface HTMLPureTableElement extends Components.PureTable, HTMLStencilElement {}
+  var HTMLPureTableElement: {
+    prototype: HTMLPureTableElement;
+    new (): HTMLPureTableElement;
+  };
   interface HTMLElementTagNameMap {
     'pure-base': HTMLPureBaseElement;
     'pure-button': HTMLPureButtonElement;
     'pure-form': HTMLPureFormElement;
     'pure-grid': HTMLPureGridElement;
+    'pure-table': HTMLPureTableElement;
   }
 }
 
@@ -149,12 +174,31 @@ declare namespace LocalJSX {
     */
     'as'?: string;
   }
+  interface PureTable {
+    /**
+    * Display different HTML element or component as table wrapper
+    */
+    'as'?: string | undefined;
+    /**
+    * Add border to table
+    */
+    'bordered'?: boolean | undefined;
+    /**
+    * Display table horizontally
+    */
+    'horizontal'?: boolean | undefined;
+    /**
+    * Add stripe to table
+    */
+    'striped'?: boolean | undefined;
+  }
 
   interface IntrinsicElements {
     'pure-base': PureBase;
     'pure-button': PureButton;
     'pure-form': PureForm;
     'pure-grid': PureGrid;
+    'pure-table': PureTable;
   }
 }
 
@@ -168,6 +212,7 @@ declare module "@stencil/core" {
       'pure-button': LocalJSX.PureButton & JSXBase.HTMLAttributes<HTMLPureButtonElement>;
       'pure-form': LocalJSX.PureForm & JSXBase.HTMLAttributes<HTMLPureFormElement>;
       'pure-grid': LocalJSX.PureGrid & JSXBase.HTMLAttributes<HTMLPureGridElement>;
+      'pure-table': LocalJSX.PureTable & JSXBase.HTMLAttributes<HTMLPureTableElement>;
     }
   }
 }
