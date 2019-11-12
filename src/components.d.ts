@@ -67,9 +67,25 @@ export namespace Components {
     */
     'as': string | undefined;
     /**
+    * Display a heading
+    */
+    'heading': string | undefined;
+    /**
+    * Display a heading
+    */
+    'headingPosition': "invert" | undefined;
+    /**
+    * Display a heading
+    */
+    'headingUrl': string | undefined;
+    /**
     * Display menu items horizontally
     */
     'horizontal': boolean | undefined;
+    /**
+    * Display a heading
+    */
+    'list': Array;
     /**
     * Add a scrollbar for overflowed menu content
     */
@@ -201,9 +217,25 @@ declare namespace LocalJSX {
     */
     'as'?: string | undefined;
     /**
+    * Display a heading
+    */
+    'heading'?: string | undefined;
+    /**
+    * Display a heading
+    */
+    'headingPosition'?: "invert" | undefined;
+    /**
+    * Display a heading
+    */
+    'headingUrl'?: string | undefined;
+    /**
     * Display menu items horizontally
     */
     'horizontal'?: boolean | undefined;
+    /**
+    * Display a heading
+    */
+    'list'?: Array;
     /**
     * Add a scrollbar for overflowed menu content
     */

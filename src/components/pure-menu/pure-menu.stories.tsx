@@ -1,22 +1,41 @@
 import { storiesOf } from "@storybook/html";
 
 storiesOf("Pure Menu", module)
-  .add(
-    "Default",
-    () => `
-    <pure-menu horizontal>
-        <a href="#" class="pure-menu-link pure-menu-heading">Title</a>
-        <ul class="pure-menu-list">
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">About</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Blog</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">GitHub</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Twitter</a></li>
-        </ul>
+  .add("Default", () => {
+    function init() {
+      const list = [
+        {
+          name: "News",
+          url: "#",
+          selected: true
+        },
+        {
+          name: "Contact",
+          url: "#",
+          dropdown: [
+            {
+              name: "Email",
+              url: "#"
+            },
+            {
+              name: "Twitter",
+              url: "#"
+            }
+          ]
+        }
+      ];
+      var cmp = document.querySelector("pure-menu");
+      cmp.list = list;
+    }
+    setTimeout(init, 3000);
+    return `
+    <pure-menu 
+      horizontal 
+      heading="Title" 
+      headingUrl="#">
     </pure-menu>
-  `
-  )
+  `;
+  })
   .add(
     "Nested children",
     () => `
