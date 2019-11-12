@@ -61,6 +61,20 @@ export namespace Components {
     */
     'as': string;
   }
+  interface PureMenu {
+    /**
+    * Display different HTML element or component as table wrapper
+    */
+    'as': string | undefined;
+    /**
+    * Display menu items horizontally
+    */
+    'horizontal': boolean | undefined;
+    /**
+    * Add a scrollbar for overflowed menu content
+    */
+    'scrollable': boolean | undefined;
+  }
   interface PureTable {
     /**
     * Display different HTML element or component as table wrapper
@@ -108,6 +122,12 @@ declare global {
     new (): HTMLPureGridElement;
   };
 
+  interface HTMLPureMenuElement extends Components.PureMenu, HTMLStencilElement {}
+  var HTMLPureMenuElement: {
+    prototype: HTMLPureMenuElement;
+    new (): HTMLPureMenuElement;
+  };
+
   interface HTMLPureTableElement extends Components.PureTable, HTMLStencilElement {}
   var HTMLPureTableElement: {
     prototype: HTMLPureTableElement;
@@ -118,6 +138,7 @@ declare global {
     'pure-button': HTMLPureButtonElement;
     'pure-form': HTMLPureFormElement;
     'pure-grid': HTMLPureGridElement;
+    'pure-menu': HTMLPureMenuElement;
     'pure-table': HTMLPureTableElement;
   }
 }
@@ -174,6 +195,20 @@ declare namespace LocalJSX {
     */
     'as'?: string;
   }
+  interface PureMenu {
+    /**
+    * Display different HTML element or component as table wrapper
+    */
+    'as'?: string | undefined;
+    /**
+    * Display menu items horizontally
+    */
+    'horizontal'?: boolean | undefined;
+    /**
+    * Add a scrollbar for overflowed menu content
+    */
+    'scrollable'?: boolean | undefined;
+  }
   interface PureTable {
     /**
     * Display different HTML element or component as table wrapper
@@ -198,6 +233,7 @@ declare namespace LocalJSX {
     'pure-button': PureButton;
     'pure-form': PureForm;
     'pure-grid': PureGrid;
+    'pure-menu': PureMenu;
     'pure-table': PureTable;
   }
 }
@@ -212,6 +248,7 @@ declare module "@stencil/core" {
       'pure-button': LocalJSX.PureButton & JSXBase.HTMLAttributes<HTMLPureButtonElement>;
       'pure-form': LocalJSX.PureForm & JSXBase.HTMLAttributes<HTMLPureFormElement>;
       'pure-grid': LocalJSX.PureGrid & JSXBase.HTMLAttributes<HTMLPureGridElement>;
+      'pure-menu': LocalJSX.PureMenu & JSXBase.HTMLAttributes<HTMLPureMenuElement>;
       'pure-table': LocalJSX.PureTable & JSXBase.HTMLAttributes<HTMLPureTableElement>;
     }
   }
