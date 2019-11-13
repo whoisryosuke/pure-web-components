@@ -1,18 +1,20 @@
 :host {
   /**
    * @prop --border-color: Border color of table cells
+   * @prop --border-width: Border width of table cells
    */
   --border-color: #cbcbcb;
+  --border-width: 1px;
 
   /* Remove spacing between table cells (from Normalize.css) */
   border-collapse: collapse;
   border-spacing: 0;
   empty-cells: show;
-  border: 1px solid var(--border-color);
+  border: var(--border-width) solid var(--border-color);
 }
 
 caption {
-  color: #000;
+  color: var(--pure-color-dark-100);
   font: italic 85%/1 arial, sans-serif;
   padding: 1em 0;
   text-align: center;
@@ -20,45 +22,45 @@ caption {
 
 td,
 th {
-  border-left: 1px solid var(--border-color);
+  border-left: var(--border-width) solid var(--border-color);
   /*  inner column border */
-  border-width: 0 0 0 1px;
+  border-width: 0 0 0 var(--border-width);
   font-size: inherit;
   margin: 0;
   overflow: visible;
   /*to make ths where the title is really long work*/
-  padding: 0.5em 1em;
+  padding: var(--pure-padding);
   /* cell padding */
 }
 
 thead {
   background-color: #e0e0e0;
-  color: #000;
+  color: var(--pure-color-dark-100);
   text-align: left;
   vertical-align: bottom;
 }
 
 /*
 striping:
-   even - #fff (white)
-   odd  - #f2f2f2 (light gray)
+   even - var(--pure-color-light-100) (white)
+   odd  - var(--pure-color-light-90) (light gray)
 */
 td {
   background-color: transparent;
 }
 
 .pure-table-odd td {
-  background-color: #f2f2f2;
+  background-color: var(--pure-color-light-90);
 }
 
 /* nth-child selector for modern browsers */
 .pure-table.striped tr:nth-child(2n-1) td {
-  background-color: #f2f2f2;
+  background-color: var(--pure-color-light-90);
 }
 
 /* BORDERED TABLES */
 .pure-table.bordered td {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
 }
 
 .pure-table.bordered tbody>tr:last-child>td {
@@ -70,8 +72,8 @@ td {
 
 .pure-table.horizontal td,
 .pure-table.horizontal th {
-  border-width: 0 0 1px 0;
-  border-bottom: 1px solid var(--border-color);
+  border-width: 0 0 var(--border-width) 0;
+  border-bottom: var(--border-width) solid var(--border-color);
 }
 
 .pure-table.horizontal tbody>tr:last-child>td {

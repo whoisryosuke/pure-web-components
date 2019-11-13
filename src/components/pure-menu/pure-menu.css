@@ -132,7 +132,7 @@
 
 .pure-menu-separator,
 .pure-menu.horizontal .pure-menu-children .pure-menu-separator {
-  background-color: #ccc;
+  background-color: var(--pure-color-light-50);
   height: 1px;
   margin: .3em 0;
 }
@@ -155,11 +155,11 @@
 }
 
 .pure-menu-link {
-  color: #777;
+  color: var(--pure-color-dark-70);
 }
 
 .pure-menu-children {
-  background-color: #fff;
+  background-color: var(--pure-color-light-100);
 }
 
 .pure-menu-link,

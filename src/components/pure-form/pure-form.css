@@ -16,7 +16,7 @@ select,
 textarea {
   padding: 0.5em 0.6em;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--pure-color-light-50);
   box-shadow: inset 0 1px 3px #ddd;
   border-radius: 4px;
   vertical-align: middle;
@@ -30,7 +30,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 input:not([type]) {
   padding: 0.5em 0.6em;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--pure-color-light-50);
   box-shadow: inset 0 1px 3px #ddd;
   border-radius: 4px;
   box-sizing: border-box;
@@ -122,9 +122,9 @@ select[readonly],
 textarea[readonly] {
   background-color: #eee;
   /* menu hover bg color */
-  color: #777;
+  color: var(--pure-color-dark-70);
   /* menu text color */
-  border-color: #ccc;
+  border-color: var(--pure-color-light-50);
 }
 
 input:focus:invalid,
@@ -144,7 +144,7 @@ input[type="checkbox"]:focus:invalid:focus {
 select {
   /* Normalizes the height; padding is not sufficient. */
   height: 2.25em;
-  border: 1px solid #ccc;
+  border: 1px solid var(--pure-color-light-50);
   background-color: white;
 }
 
@@ -239,7 +239,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 input.pure-input-rounded,
 .pure-input-rounded {
   border-radius: 2em;
-  padding: 0.5em 1em;
+  padding: var(--pure-padding);
 }
 
 /* Grouped Inputs */
@@ -315,7 +315,7 @@ input.pure-input-rounded,
 .message-inline {
   display: inline-block;
   padding-left: 0.3em;
-  color: #666;
+  color: var(--pure-color-dark-60);
   vertical-align: middle;
   font-size: 0.875em;
 }
@@ -323,6 +323,6 @@ input.pure-input-rounded,
 /* Block help for forms */
 .message {
   display: block;
-  color: #666;
+  color: var(--pure-color-dark-60);
   font-size: 0.875em;
 }

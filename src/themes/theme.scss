@@ -2,19 +2,31 @@
 // -------------------------------------------------------------------------------------------
 // This file contains the color variables shared
 // between components. This should only include colors
-
-// Default Pure Colors
-// -------------------------------------------------------------------------------------------
 :root {
+
+  // Default Pure Colors
+  // -----------------------------------------------------------------------------------------
+
   --pure-color-primary: #3880ff;
   --pure-color-secondary: #3dc2ff;
   --pure-color-tertiary: #5260ff;
   --pure-color-success: #2dd36f;
   --pure-color-warning: #ffc409;
   --pure-color-danger: #eb445a;
+  --pure-color-light-100: #FFFFFF;
+  --pure-color-light-90: #f2f2f2;
   --pure-color-light: #f4f5f8;
+  --pure-color-light-50: #ccc;
   --pure-color-medium: #92949c;
+  --pure-color-dark-100: #000;
   --pure-color-dark: #222428;
+  --pure-color-dark-70: #777;
+  --pure-color-dark-60: #666;
+
+  // Default Pure Spacing
+  // -----------------------------------------------------------------------------------------
+
+  --pure-padding: 0.5em 1em;
 }
 
 $primary: var(--pure-color-primary) !default;
@@ -32,12 +44,12 @@ $dark: var(--pure-color-dark) !default;
 // Used internally to calculate the default steps
 
 
-$background-color-value: #fff !default;
+$background-color-value: var(--pure-color-light-100) !default;
 $background-color-rgb-value: 255,
 255,
 255 !default;
 
-$text-color-value: #000 !default;
+$text-color-value: var(--pure-color-dark-100) !default;
 $text-color-rgb-value: 0,
 0,
 0 !default;

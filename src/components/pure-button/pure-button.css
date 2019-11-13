@@ -1,8 +1,14 @@
+:host {
+  display: inline-block;
+}
+
 /* Core Styles */
 .pure-button {
+  /* fit width of :host */
+  width: 100%;
   font-family: inherit;
   font-size: 100%;
-  padding: 0.5em 1em;
+  padding: var(--pure-padding);
   color: #444;
   /* rgba not supported (IE 8) */
   color: rgba(0, 0, 0, 0.80);
@@ -57,7 +63,7 @@
 a.pure-button.primary,
 a.pure-button.selected {
   background-color: var(--pure-color-primary);
-  color: #fff;
+  color: var(--pure-color-light-100);
 }
 
 /* Button Groups */
