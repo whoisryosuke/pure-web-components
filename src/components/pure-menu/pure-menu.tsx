@@ -2,8 +2,7 @@ import { Component, Host, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "pure-menu",
-  styleUrl: "pure-menu.css",
-  shadow: true
+  styleUrl: "pure-menu.css"
 })
 export class PureMenu {
   /**
@@ -26,14 +25,14 @@ export class PureMenu {
     const TagType = this.as === undefined ? "nav" : (this.as as any);
 
     return (
-      <Host>
-        <TagType
-          class={{
-            "pure-menu": true,
-            scrollable: scrollable !== undefined,
-            horizontal: horizontal !== undefined
-          }}
-        >
+      <Host
+        class={{
+          "pure-menu": true,
+          scrollable: scrollable !== undefined,
+          horizontal: horizontal !== undefined
+        }}
+      >
+        <TagType>
           <slot></slot>
         </TagType>
       </Host>
