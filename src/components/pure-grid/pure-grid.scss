@@ -140,6 +140,11 @@ this the same font stack that Normalize.css sets for the `body`.
 @include grid-generator(3);
 @include grid-generator(4);
 @include grid-generator(5);
+@include grid-generator(6);
+@include grid-generator(7);
+@include grid-generator(8);
+@include grid-generator(12);
+@include grid-generator(24);
 
 /*
  * Generate 12 column grids for each breakpoint
