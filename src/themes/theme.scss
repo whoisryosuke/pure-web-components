@@ -1,0 +1,48 @@
+// Pure Colors
+// -------------------------------------------------------------------------------------------
+// This file contains the color variables shared
+// between components. This should only include colors
+
+// Default Pure Colors
+// -------------------------------------------------------------------------------------------
+:root {
+  --pure-color-primary: #3880ff;
+  --pure-color-secondary: #3dc2ff;
+  --pure-color-tertiary: #5260ff;
+  --pure-color-success: #2dd36f;
+  --pure-color-warning: #ffc409;
+  --pure-color-danger: #eb445a;
+  --pure-color-light: #f4f5f8;
+  --pure-color-medium: #92949c;
+  --pure-color-dark: #222428;
+}
+
+$primary: var(--pure-color-primary) !default;
+$secondary: var(--pure-color-secondary) !default;
+$tertiary: var(--pure-color-tertiary) !default;
+$success: var(--pure-color-success) !default;
+$warning: var(--pure-color-warning) !default;
+$danger: var(--pure-color-danger) !default;
+$light: var(--pure-color-light) !default;
+$medium: var(--pure-color-medium) !default;
+$dark: var(--pure-color-dark) !default;
+
+// Default Foreground and Background Colors
+// -------------------------------------------------------------------------------------------
+// Used internally to calculate the default steps
+
+
+$background-color-value: #fff !default;
+$background-color-rgb-value: 255,
+255,
+255 !default;
+
+$text-color-value: #000 !default;
+$text-color-rgb-value: 0,
+0,
+0 !default;
+
+$background-color: var(--pure-background-color, $background-color-value) !default;
+$background-color-rgb: var(--pure-background-color-rgb, $background-color-rgb-value) !default;
+$text-color: var(--pure-text-color, $text-color-value) !default;
+$text-color-rgb: var(--pure-text-color-rgb, $text-color-rgb-value) !default;
