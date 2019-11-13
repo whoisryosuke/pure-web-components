@@ -22,7 +22,6 @@ export class PureMenu {
 
   render() {
     const { scrollable, horizontal } = this;
-    const TagType = this.as === undefined ? "nav" : (this.as as any);
 
     return (
       <Host
@@ -32,9 +31,7 @@ export class PureMenu {
           horizontal: horizontal !== undefined
         }}
       >
-        <TagType>
-          <slot></slot>
-        </TagType>
+        <slot></slot>
       </Host>
     );
   }
