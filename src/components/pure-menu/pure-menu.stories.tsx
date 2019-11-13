@@ -27,7 +27,7 @@ storiesOf("Pure Menu", module)
       var cmp = document.querySelector("pure-menu");
       cmp.list = list;
     }
-    setTimeout(init, 3000);
+    setTimeout(init, 1500);
     return `
     <pure-menu 
       horizontal 

@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop } from "@stencil/core";
+import { PureMenuItem } from "../../interface";
 
 @Component({
   tag: "pure-menu",
@@ -39,7 +40,7 @@ export class PureMenu {
   /**
    * Display a heading
    */
-  @Prop() list: Array;
+  @Prop() list: PureMenuItem[];
 
   render() {
     const {
@@ -52,7 +53,10 @@ export class PureMenu {
     } = this;
     const TagType = this.as === undefined ? "nav" : (this.as as any);
     const pureHeading = (
-      <a href="#" class="pure-menu-heading pure-menu-link">
+      <a
+        href={headingUrl ? headingUrl : "#"}
+        class="pure-menu-heading pure-menu-link"
+      >
         {heading}
       </a>
     );
@@ -63,7 +67,6 @@ export class PureMenu {
      */
     const createMenuItem = menuItem => {
       // If URL is set, wrap in link
-      console.log("rendering", menuItem);
       if ("url" in menuItem && menuItem.url !== undefined) {
         return (
           <li class="pure-menu-item">
@@ -77,14 +80,16 @@ export class PureMenu {
       }
     };
 
+    /**
+     * Checks if dropdown was provided and loops through
+     * @param menuItem PureMenuItem
+     */
     const checkDropdown = menuItem => {
-      console.log("checking dropdown");
       if (
         "dropdown" in menuItem &&
         Array.isArray(menuItem.dropdown) &&
         menuItem.dropdown.length > 0
       ) {
-        console.log("dropdown found", menuItem);
         return (
           <li class="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
             <a
@@ -102,26 +107,30 @@ export class PureMenu {
           </li>
         );
       } else {
-        console.log("no dropdown found", menuItem);
-        createMenuItem(menuItem);
+        return createMenuItem(menuItem);
       }
     };
 
     return (
-      <Host>
-        <TagType
-          class={{
-            "pure-menu": true,
-            scrollable: scrollable !== undefined,
-            horizontal: horizontal !== undefined
-          }}
-        >
-          {heading && pureHeading}
+      <Host
+        class={{
+          "pure-menu": true,
+          scrollable: scrollable !== undefined,
+          horizontal: horizontal !== undefined
+        }}
+      >
+        <TagType>
+          {/* Show heading if position isn't inverted and it exists */}
+          {!headingPosition && heading && pureHeading}
+
           {list && (
             <ul class="pure-menu-list">
               {list.map(menuItem => checkDropdown(menuItem))}
             </ul>
           )}
+
+          {/* Show heading if position is inverted and it exists */}
+          {headingPosition && heading && pureHeading}
         </TagType>
       </Host>
     );

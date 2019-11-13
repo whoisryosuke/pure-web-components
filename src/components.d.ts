@@ -7,7 +7,9 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  PureMenuItem,
+} from './interface';
 
 export namespace Components {
   interface PureBase {}
@@ -85,7 +87,7 @@ export namespace Components {
     /**
     * Display a heading
     */
-    'list': Array;
+    'list': PureMenuItem[];
     /**
     * Add a scrollbar for overflowed menu content
     */
@@ -235,7 +237,7 @@ declare namespace LocalJSX {
     /**
     * Display a heading
     */
-    'list'?: Array;
+    'list'?: PureMenuItem[];
     /**
     * Add a scrollbar for overflowed menu content
     */
