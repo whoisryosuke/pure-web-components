@@ -19,6 +19,7 @@
 | Name             | Description                 |
 | ---------------- | --------------------------- |
 | `--border-color` | Border color of table cells |
+| `--border-width` | Border width of table cells |
 
 
 ----------------------------------------------
