@@ -1,12 +1,10 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h } from "@stencil/core";
 
 @Component({
-  tag: 'pure-base',
-  styleUrl: 'pure-base.scss',
-  shadow: true
+  tag: "pure-base",
+  styleUrl: "pure-base.scss"
 })
 export class PureBase {
-
   render() {
     return (
       <Host>
@@ -14,5 +12,4 @@ export class PureBase {
       </Host>
     );
   }
-
 }
