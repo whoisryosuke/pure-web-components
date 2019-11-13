@@ -1,0 +1,409 @@
+{
+  "timestamp": "2019-11-13T21:54:57",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.7.5",
+    "typescriptVersion": "3.6.3"
+  },
+  "components": [
+    {
+      "filePath": "src/components/pure-base/pure-base.tsx",
+      "encapsulation": "none",
+      "tag": "pure-base",
+      "readme": "# pure-base\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/pure-button/pure-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "pure-button",
+      "readme": "# my-component\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "as",
+          "type": "string",
+          "mutable": false,
+          "attr": "as",
+          "reflectToAttr": false,
+          "docs": "HTML element to use as basis",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "Background color",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Is disabled?",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "Displays button as link",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The button or input type (usually submit)",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "Optional prop for input to show text",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/pure-form/pure-form.tsx",
+      "encapsulation": "shadow",
+      "tag": "pure-form",
+      "readme": "# pure-form\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "aligned",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "aligned",
+          "reflectToAttr": false,
+          "docs": "Makes labels and input elements inline inside groups",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "as",
+          "type": "string",
+          "mutable": false,
+          "attr": "as",
+          "reflectToAttr": false,
+          "docs": "HTML tag/element for form container",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stacked",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "stacked",
+          "reflectToAttr": false,
+          "docs": "Stack form elements",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/pure-grid/pure-grid.tsx",
+      "encapsulation": "shadow",
+      "tag": "pure-grid",
+      "readme": "# pure-grid\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "as",
+          "type": "string",
+          "mutable": false,
+          "attr": "as",
+          "reflectToAttr": false,
+          "docs": "HTML tag/element for form container",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/pure-menu/pure-menu.tsx",
+      "encapsulation": "none",
+      "tag": "pure-menu",
+      "readme": "# pure-menu\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "as",
+          "type": "string",
+          "mutable": false,
+          "attr": "as",
+          "reflectToAttr": false,
+          "docs": "Display different HTML element or component as table wrapper",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "horizontal",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "horizontal",
+          "reflectToAttr": false,
+          "docs": "Display menu items horizontally",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "scrollable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "scrollable",
+          "reflectToAttr": false,
+          "docs": "Add a scrollbar for overflowed menu content",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/pure-table/pure-table.tsx",
+      "encapsulation": "none",
+      "tag": "pure-table",
+      "readme": "# pure-table\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "bordered",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "bordered",
+          "reflectToAttr": false,
+          "docs": "Add border to table",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "horizontal",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "horizontal",
+          "reflectToAttr": false,
+          "docs": "Display table horizontally",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "striped",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "striped",
+          "reflectToAttr": false,
+          "docs": "Add stripe to table",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [
+        {
+          "name": "--border-color",
+          "annotation": "prop",
+          "docs": "Border color of table cells"
+        },
+        {
+          "name": "--border-width",
+          "annotation": "prop",
+          "docs": "Border width of table cells"
+        }
+      ],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}

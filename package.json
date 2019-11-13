@@ -17,6 +17,7 @@
   "scripts": {
     "prepublish": "npm run build",
     "build": "stencil build",
+    "docs:data": "stencil build --docs-json docs/content/components.json",
     "generate": "stencil generate",
     "start": "stencil build --dev --watch --docs",
     "test": "stencil test --spec",
