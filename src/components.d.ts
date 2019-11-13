@@ -77,10 +77,6 @@ export namespace Components {
   }
   interface PureTable {
     /**
-    * Display different HTML element or component as table wrapper
-    */
-    'as': string | undefined;
-    /**
     * Add border to table
     */
     'bordered': boolean | undefined;
@@ -210,10 +206,6 @@ declare namespace LocalJSX {
     'scrollable'?: boolean | undefined;
   }
   interface PureTable {
-    /**
-    * Display different HTML element or component as table wrapper
-    */
-    'as'?: string | undefined;
     /**
     * Add border to table
     */
