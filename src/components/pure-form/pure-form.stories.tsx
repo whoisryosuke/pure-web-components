@@ -1,4 +1,9 @@
+import { text } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/html";
+
+// Create Knobs
+const inputTextKnob = (inputText = "Submit", inputLabel = "Name") =>
+  text(inputLabel, inputText);
 
 storiesOf("Pure Form", module)
   .add(
@@ -8,15 +13,24 @@ storiesOf("Pure Form", module)
         <fieldset>
             <legend>An inline form. Check for alignment and input/select sizing.</legend>
 
-            <input type="text" placeholder="text input">
-            <input type="search" placeholder="search input">
+            <input type="text" placeholder="${inputTextKnob(
+              "text input",
+              "text"
+            )}">
+            <input type="search" placeholder="${inputTextKnob(
+              "search input",
+              "search"
+            )}">
             <select name="fooselect">
                 <option value="CA">CA</option>
                 <option value="NY">NY</option>
             <select>
 
 
-            <pure-button type="submit">Sign in</pure-button>
+            <pure-button type="submit">${inputTextKnob(
+              "Submit form",
+              "Button"
+            )}</pure-button>
         </fieldset>
     </pure-form>
   `
@@ -58,8 +72,8 @@ storiesOf("Pure Form", module)
                 <input type="checkbox"> I've read the terms and conditions
             </label>
 
-            <pure-button type="submit" class="pure-button notice">Submit</pure-button>
-            <pure-button type="reset" class="pure-button">Reset</pure-button>
+            <pure-button type="submit" class="notice">Submit</pure-button>
+            <pure-button type="reset">Reset</pure-button>
         </fieldset>
     </pure-form>
   `
@@ -101,7 +115,7 @@ storiesOf("Pure Form", module)
                     <input type="checkbox"> Remember Me
                 </label>
 
-                <pure-button type="submit" class="pure-button">Submit</pure-button>
+                <pure-button type="submit">Submit</pure-button>
             </div>
         </fieldset>
     </pure-form>
@@ -281,11 +295,14 @@ storiesOf("Pure Form", module)
         <label>Message</label>
         <textarea class="pure-input-rounded" rows="5" cols="40" placeholder="Message..."></textarea>
 
-        <button type="submit" class="pure-button pure-input-rounded">Search</button>
-        <input type="reset" class="pure-button pure-input-rounded" value="Reset" />
+        <button type="submit" class="pure-input-rounded">Search</button>
+        <input type="reset" class="pure-input-rounded" value="Reset" />
     </pure-form>
   `
-  ).add('Select Inputs', () => `
+  )
+  .add(
+    "Select Inputs",
+    () => `
   <pure-form>
         <select class="pure-input-medium">
             <option>Brazil</option>
@@ -303,7 +320,11 @@ storiesOf("Pure Form", module)
             <option>Venezuela</option>
         </select>
     </pure-form>
-  `).add('Checkboxes and Radios', () => `
+  `
+  )
+  .add(
+    "Checkboxes and Radios",
+    () => `
     <pure-form>
         <label class="pure-checkbox">
             <input type="checkbox" value="">
@@ -320,7 +341,11 @@ storiesOf("Pure Form", module)
             ...Or this one!
         </label>
     </pure-form>
-  `).add('Help Text', () => `
+  `
+  )
+  .add(
+    "Help Text",
+    () => `
     <pure-form stacked>
         <fieldset>
             <label>Last Name</label>
@@ -328,12 +353,17 @@ storiesOf("Pure Form", module)
             <aside class="pure-form-message">Block help text</aside>
         </fieldset>
     </pure-form>
-  `).add('Buttons', () => `
+  `
+  )
+  .add(
+    "Buttons",
+    () => `
     <pure-form>
         <pure-button color="primary" href="#">Anchor</pure-button>
-        <pure-button class="pure-button pure-button-primary">Button</pure-button>
+        <pure-button class="pure-button-primary">Button</pure-button>
         <pure-button as="input" color="primary" type="submit" value="Submit"></pure-button>
         <pure-button as="input" color="primary" type="button" value="Input Button"></pure-button>
         <pure-button as="input" color="primary" type="reset" value="Reset"></pure-button>
     </pure-form>
-  `);
+  `
+  );
