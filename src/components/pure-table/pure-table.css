@@ -1,4 +1,7 @@
 :host {
+  /**
+   * @prop --border-color: Border color of table cells
+   */
   --border-color: #cbcbcb;
 
   /* Remove spacing between table cells (from Normalize.css) */
