@@ -1,9 +1,11 @@
 :host {
+  --border-color: #cbcbcb;
+
   /* Remove spacing between table cells (from Normalize.css) */
   border-collapse: collapse;
   border-spacing: 0;
   empty-cells: show;
-  border: 1px solid #cbcbcb;
+  border: 1px solid var(--border-color);
 }
 
 caption {
@@ -15,7 +17,7 @@ caption {
 
 td,
 th {
-  border-left: 1px solid #cbcbcb;
+  border-left: 1px solid var(--border-color);
   /*  inner column border */
   border-width: 0 0 0 1px;
   font-size: inherit;
@@ -53,7 +55,7 @@ td {
 
 /* BORDERED TABLES */
 .pure-table.bordered td {
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .pure-table.bordered tbody>tr:last-child>td {
@@ -66,7 +68,7 @@ td {
 .pure-table.horizontal td,
 .pure-table.horizontal th {
   border-width: 0 0 1px 0;
-  border-bottom: 1px solid #cbcbcb;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .pure-table.horizontal tbody>tr:last-child>td {

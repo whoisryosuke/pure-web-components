@@ -61,7 +61,7 @@ input[type="color"]:focus,
 select:focus,
 textarea:focus {
   outline: 0;
-  border-color: #129FEA;
+  border-color: var(--pure-color-secondary);
 }
 
 /*
@@ -70,14 +70,14 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 */
 input:not([type]):focus {
   outline: 0;
-  border-color: #129FEA;
+  border-color: var(--pure-color-secondary);
 }
 
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin solid #129FEA;
-  outline: 1px auto #129FEA;
+  outline: thin solid var(--pure-color-secondary);
+  outline: 1px auto var(--pure-color-secondary);
 }
 
 .pure-checkbox,
@@ -103,7 +103,7 @@ input[type="color"][disabled],
 select[disabled],
 textarea[disabled] {
   cursor: not-allowed;
-  background-color: #eaeded;
+  background-color: var(--pure-color-light);
   color: #cad2d3;
 }
 
@@ -113,7 +113,7 @@ since IE8 won't execute CSS that contains a CSS3 selector.
 */
 input:not([type])[disabled] {
   cursor: not-allowed;
-  background-color: #eaeded;
+  background-color: var(--pure-color-light);
   color: #cad2d3;
 }
 
@@ -130,14 +130,15 @@ textarea[readonly] {
 input:focus:invalid,
 textarea:focus:invalid,
 select:focus:invalid {
-  color: #b94a48;
-  border-color: #e9322d;
+  --color: #b94a48;
+  color: var(--color);
+  border-color: var(--pure-color-danger);
 }
 
 input[type="file"]:focus:invalid:focus,
 input[type="radio"]:focus:invalid:focus,
 input[type="checkbox"]:focus:invalid:focus {
-  outline-color: #e9322d;
+  outline-color: var(--pure-color-danger);
 }
 
 select {
@@ -311,8 +312,6 @@ input.pure-input-rounded,
 }
 
 /* Inline help for forms */
-/* NOTE: pure-help-inline is deprecated. Use .message-inline instead. */
-.pure-help-inline,
 .message-inline {
   display: inline-block;
   padding-left: 0.3em;
