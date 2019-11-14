@@ -32,7 +32,9 @@ export class PureTable {
           horizontal: horizontal !== undefined
         }}
       >
-        <slot></slot>
+        <table>
+          <slot></slot>
+        </table>
       </Host>
     );
   }

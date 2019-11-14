@@ -14,6 +14,14 @@
 | `striped`    | `striped`    | Add stripe to table        | `boolean` | `undefined` |
 
 
+## CSS Custom Properties
+
+| Name             | Description                 |
+| ---------------- | --------------------------- |
+| `--border-color` | Border color of table cells |
+| `--border-width` | Border width of table cells |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
