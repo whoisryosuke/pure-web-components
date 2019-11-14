@@ -1,3 +1,173 @@
+/* --------------------------
+ * Fonts
+ * --------------------------
+*/
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* --------------------------
+ * Element Styles
+ * --------------------------
+*/
+
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *="pure-u"] {
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.01em;
+}
+
+body {
+  min-width: 320px;
+  background-color: #fff;
+  color: #777;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: rgb(75, 75, 75);
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.125em;
+}
+
+a {
+  color: #3b8bba;
+  /* block-background-text-normal */
+  text-decoration: none;
+}
+
+a:visited {
+  color: #265778;
+  /* block-normal-text-normal */
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 0 0 10px 0;
+}
+
+aside {
+  background: #1f8dd6;
+  /* same color as selected state on site menu */
+  margin: 1em 0;
+  padding: 0.3em 1em;
+  border-radius: 3px;
+  color: #fff;
+}
+
+aside a,
+aside a:visited {
+  color: rgb(169, 226, 255);
+}
+
+
+/* --------------------------
+ * Header
+ * --------------------------
+*/
+
+header.SiteHeader {
+  font-family: "Raleway",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0.05em;
+  background: var(--pure-color-dark-background);
+  position: relative;
+}
+
+header.SiteHeader pure-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+header.SiteHeader h1 {
+  color: var(--pure-color-light-90);
+  font-size: 150%;
+  font-weight: 100;
+  margin: 0;
+}
+
+/* --------------------------
+ * Code Styles
+ * --------------------------
+*/
+
+pre,
+code {
+  font-family: Consolas, Courier, monospace;
+  color: #333;
+  background: rgb(250, 250, 250);
+}
+
+code {
+  padding: 0.2em 0.4em;
+  white-space: nowrap;
+}
+
+.content p code {
+  font-size: 90%;
+}
+
+.code {
+  margin-left: -1em;
+  margin-right: -1em;
+  padding: 1em;
+  border: 1px solid #eee;
+  border-left-width: 0;
+  border-right-width: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.code code {
+  font-size: 95%;
+  white-space: pre;
+  word-wrap: normal;
+  padding: 0;
+  background: none;
+}
+
+.code-wrap code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* -------------
+ * Table Styles
+ * -------------
+*/
+
+pure-table th,
+pure-table td {
+  padding: 0.5em 1em;
+}
+
+
+
+/* --------------------------
+ * Dashboard / Sidebar
+ * --------------------------
+*/
+
 .Dashboard__sidebar {
   width: 240px !important;
   height: 100%;
@@ -38,27 +208,6 @@
   display: block;
 }
 
-.text.center {
-  text-align: center;
-}
-
-.inverted.text {
-  color: #FFF !important;
-}
-
-.inverted.grey.text {
-  color: #AAA !important;
-}
-
-.Dashboard__content>.ui.vertical.segment {
-  padding: 0;
-}
-
-.ui.inverted.light.grey.segment {
-  background-color: lightgray !important;
-  color: #000 !important;
-}
-
 @media screen and (min-width: 1025px) {
   .Dashboard__sidebar {
     -webkit-transform: translateX(0);
@@ -80,19 +229,102 @@
 
 header a.pure-menu-link,
 .Dashboard__sidebar pure-menu li a,
+.Dashboard__sidebar pure-menu .pure-menu-link:visited,
+.Dashboard__sidebar pure-menu li a:visited,
 .Dashboard__sidebar .pure-menu-selected>.pure-menu-link,
 .Dashboard__sidebar .pure-menu-selected>.pure-menu-link:visited {
   color: var(--pure-color-light-90);
 }
 
 header pure-menu a.pure-menu-link:hover,
-.Dashboard__sidebar pure-menu a.pure-menu-link:hover,
+.Dashboard__sidebar pure-menu .pure-menu-link:hover,
 .Dashboard__sidebar pure-menu li a:hover,
 .Dashboard__sidebar pure-menu li a:focus {
   background: #333;
 }
 
+header pure-menu a.pure-menu-heading:hover {
+  background: transparent;
+}
+
 .Dashboard__sidebar .pure-menu-selected {
   color: var(--pure-color-light-90);
   background: var(--pure-color-primary);
+}
+
+/* --------------------------
+ * Documentation Page
+ * --------------------------
+*/
+
+.Dashboard__content .content h2,
+.Dashboard__content .content h3 {
+  font-weight: 300;
+  margin: 2em 0 1em 0;
+  color: #888;
+}
+
+.Dashboard__content .content p {
+  font-size: 1.125em;
+}
+
+pure-table {
+  width: 100%;
+}
+
+
+/**
+ * Baby Blue theme for RainbowJS
+ *
+ * @author tilomitra
+ */
+
+pre .comment {
+  color: #999;
+}
+
+pre .tag,
+pre .tag-name,
+pre .support.tag-name {
+  color: rgb(85, 85, 85);
+}
+
+pre .keyword,
+pre .css-property,
+pre .vendor-prefix,
+pre .sass,
+pre .class,
+pre .id,
+pre .css-value,
+pre .entity.function,
+pre .storage.function {
+  font-weight: bold;
+}
+
+pre .css-property,
+pre .css-value,
+pre .vendor-prefix,
+pre .support.namespace {
+  color: #333;
+}
+
+pre .constant.numeric,
+pre .keyword.unit,
+pre .hex-color {
+  font-weight: normal;
+  color: #099;
+}
+
+pre .attribute,
+pre .variable,
+pre .support {
+  color: #757575;
+  /* skinbuilder block-page-text-normal with #1f8dd6 as primary */
+}
+
+pre .string,
+pre .support.value {
+  font-weight: normal;
+  color: #3b8bba;
+  /* skinbuilder block-mine-text-low with #1f8dd6 as primary */
 }
