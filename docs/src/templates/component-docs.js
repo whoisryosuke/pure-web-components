@@ -9,7 +9,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <DocsLayout>
-      <div className="blog-post">
+      <div style={{ maxWidth: 960, padding: "2em", margin: "auto" }}>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
         <div
