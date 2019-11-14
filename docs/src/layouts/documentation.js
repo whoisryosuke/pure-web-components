@@ -1,8 +1,24 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import Header from "../components/header"
+import Sidebar from "../components/sidebar"
 
-export default function documentation({ children }) {
+export default ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+              filename
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <React.Fragment>
       <Helmet>
@@ -13,7 +29,6 @@ export default function documentation({ children }) {
         <script nomodule="" src="/dist/pure-web-components.js"></script>
       </Helmet>
       <Header />
-      <pure-base>{children}</pure-base>
-    </React.Fragment>
+        <Sidebar components={data.allMarkdownRemark.edges} />
   )
 }
