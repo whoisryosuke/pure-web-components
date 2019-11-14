@@ -2,6 +2,7 @@
   width: 240px !important;
   height: 100%;
   max-height: 100%;
+  background-color: var(--pure-color-dark-background);
   position: absolute;
   left: 0;
   margin: 0 !important;
@@ -26,7 +27,7 @@
 .Dashboard__content {
   margin-left: 240px !important;
   min-height: calc(100vh);
-  background-color: #EFEFEF;
+  background-color: var(--pure-color-light-100);
 }
 
 .Dashboard__content>.content {
@@ -75,31 +76,23 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .ui.fixed.menu {
-    display: none !important;
-  }
+/* Sidebar Styles */
 
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    display: none;
-  }
+header a.pure-menu-link,
+.Dashboard__sidebar pure-menu li a,
+.Dashboard__sidebar .pure-menu-selected>.pure-menu-link,
+.Dashboard__sidebar .pure-menu-selected>.pure-menu-link:visited {
+  color: var(--pure-color-light-90);
+}
 
-  .secondary.pointing.menu .toc.item {
-    display: block;
-  }
+header pure-menu a.pure-menu-link:hover,
+.Dashboard__sidebar pure-menu a.pure-menu-link:hover,
+.Dashboard__sidebar pure-menu li a:hover,
+.Dashboard__sidebar pure-menu li a:focus {
+  background: #333;
+}
 
-  .masthead.segment {
-    min-height: 350px;
-  }
-
-  .masthead h1.ui.header {
-    font-size: 2em;
-    margin-top: 1.5em;
-  }
-
-  .masthead h2 {
-    margin-top: 0.5em;
-    font-size: 1.5em;
-  }
+.Dashboard__sidebar .pure-menu-selected {
+  color: var(--pure-color-light-90);
+  background: var(--pure-color-primary);
 }
