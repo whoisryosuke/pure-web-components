@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import rehypeReact from "rehype-react"
 import DocsLayout from "../layouts/documentation"
+import SEO from "../components/seo"
 import PageHeader from "../components/pageHeader"
 
 export default function Template({
@@ -16,14 +17,17 @@ export default function Template({
     },
   }).Compiler
   const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, htmlAst } = markdownRemark
+  const { fields, frontmatter, htmlAst } = markdownRemark
+  let pageTitle
+  if (fields.section) {
+    pageTitle = fields.filename.replace("/", "")
+  } else {
+    pageTitle = frontmatter && frontmatter.title
+  }
   return (
     <DocsLayout location={location}>
-      <div style={{ maxWidth: 960, padding: "2em", margin: "auto" }}>
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        {renderAst(htmlAst)}
-      </div>
+      <SEO title={pageTitle} />
+      {renderAst(htmlAst)}
     </DocsLayout>
   )
 }
@@ -33,6 +37,11 @@ export const pageQuery = graphql`
       htmlAst
       frontmatter {
         title
+      }
+      fields {
+        slug
+        filename
+        section
       }
     }
   }
