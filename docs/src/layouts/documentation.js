@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet"
 import Header from "../components/header"
 import Sidebar from "../components/sidebar"
 
+import "./documentation.css"
+
 export default ({ children }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
@@ -20,7 +22,7 @@ export default ({ children }) => {
     }
   `)
   return (
-    <React.Fragment>
+    <pure-base>
       <Helmet>
         <script
           type="module"
@@ -29,6 +31,10 @@ export default ({ children }) => {
         <script nomodule="" src="/dist/pure-web-components.js"></script>
       </Helmet>
       <Header />
+      <main className="Dashboard">
         <Sidebar components={data.allMarkdownRemark.edges} />
+        <section className="Dashboard__content">{children}</section>
+      </main>
+    </pure-base>
   )
 }
