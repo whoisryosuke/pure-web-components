@@ -6,7 +6,7 @@ import Sidebar from "../components/sidebar"
 
 import "./documentation.css"
 
-export default ({ children }) => {
+export default ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       allMarkdownRemark {
@@ -32,7 +32,10 @@ export default ({ children }) => {
       </Helmet>
       <Header />
       <main className="Dashboard">
-        <Sidebar components={data.allMarkdownRemark.edges} />
+        <Sidebar
+          currentPage={location.pathname}
+          components={data.allMarkdownRemark.edges}
+        />
         <section className="Dashboard__content">{children}</section>
       </main>
     </pure-base>

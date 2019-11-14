@@ -4,11 +4,12 @@ import DocsLayout from "../layouts/documentation"
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
+  location,
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   return (
-    <DocsLayout>
+    <DocsLayout location={location}>
       <div style={{ maxWidth: 960, padding: "2em", margin: "auto" }}>
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>

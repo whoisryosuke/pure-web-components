@@ -1,9 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default function sidebar({ components }) {
+export default function sidebar({ components, currentPage }) {
   const componentList = components.map(component => (
-    <li className="pure-menu-item">
+    <li
+      className={`pure-menu-item ${currentPage === component.node.fields.slug &&
+        `pure-menu-selected`}`}
+    >
       <Link to={component.node.fields.slug} className="pure-menu-link">
         {`<`}
         {component.node.fields.filename.replace("/", "")}
