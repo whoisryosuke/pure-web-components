@@ -3,33 +3,25 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `var(--pure-color-dark-background)`,
-      position: "relative",
-    }}
-  >
+  <header className="SiteHeader">
     <div
       style={{
         margin: `0 auto`,
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <pure-menu
-        horizontal
-        style={{ display: "flex", justifyContent: "space-between" }}
-      >
+      <pure-menu horizontal>
         <Link to="/" className="pure-menu-link pure-menu-heading">
-          {siteTitle}
+          <h1>PURE</h1>
         </Link>
         <ul className="pure-menu-list">
           <li className="pure-menu-item">
-            <Link to="/" className="pure-menu-link">
+            <Link to="/getting-started" className="pure-menu-link">
               Getting Started
             </Link>
           </li>
           <li className="pure-menu-item">
-            <Link to="/" className="pure-menu-link">
+            <Link to="/pure-button" className="pure-menu-link">
               Components
             </Link>
           </li>
@@ -39,9 +31,13 @@ const Header = ({ siteTitle }) => (
             </Link>
           </li>
           <li className="pure-menu-item">
-            <Link to="/" className="pure-menu-link">
+            <a
+              href="https://github.com/whoisryosuke/pure-web-components"
+              className="pure-menu-link"
+              target="_blank"
+            >
               Github
-            </Link>
+            </a>
           </li>
         </ul>
       </pure-menu>
