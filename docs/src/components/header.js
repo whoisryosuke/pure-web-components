@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => (
             </Link>
           </li>
           <li className="pure-menu-item">
-            <Link to="/pure-button" className="pure-menu-link">
+            <Link to="/components/pure-button" className="pure-menu-link">
               Components
             </Link>
           </li>

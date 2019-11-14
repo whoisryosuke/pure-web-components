@@ -10,17 +10,39 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const markdownPath = createFilePath({ node, getNode, basePath: `pages` })
+    const isComponent = markdownPath.includes("readme")
+    let section
+    if (isComponent) {
+      section = "components"
+    } else {
+      section = "page"
+    }
+    // Generate page titles and slugs from file name
+    // Remove slashes and readme from component filenames
     const slug = markdownPath.replace("readme/", "")
     const fileName = slug.replace("/", "")
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
+    if (isComponent) {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `components${slug}`,
+      })
+    } else {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug,
+      })
+    }
     createNodeField({
       node,
       name: `filename`,
       value: fileName,
+    })
+    createNodeField({
+      node,
+      name: `section`,
+      value: section,
     })
   }
 }
