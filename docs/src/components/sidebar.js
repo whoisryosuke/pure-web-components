@@ -2,38 +2,62 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default function sidebar({ components, currentPage }) {
-  const componentList = components.map(component => (
-    <li
-      className={`pure-menu-item ${currentPage === component.node.fields.slug &&
-        `pure-menu-selected`}`}
-    >
-      <Link to={component.node.fields.slug} className="pure-menu-link">
-        {`<`}
-        {component.node.fields.filename.replace("/", "")}
-        {`>`}
-      </Link>
-    </li>
-  ))
+  const pages = [
+    {
+      name: "Getting Started",
+      url: "/getting-started",
+    },
+    {
+      name: "Components",
+      url: "/components/pure-button",
+    },
+    {
+      name: "Theming",
+      url: "/theming",
+    },
+  ]
+  const componentList = components.map(component => {
+    const {
+      node: {
+        fields: { section, slug, filename },
+      },
+    } = component
+    if (section === "components") {
+      // Set active depending on currentPage vs slug
+      return (
+        <li
+          className={`pure-menu-item ${
+            currentPage.includes(slug.slice(0, -1)) ? `pure-menu-selected` : ""
+          }`}
+        >
+          <Link to={slug} className="pure-menu-link">
+            {`<`}
+            {filename.replace("/", "")}
+            {`>`}
+          </Link>
+        </li>
+      )
+    }
+  })
+
+  const pageList = pages.map(page => {
+    // Set active depending on currentPage vs slug
+    return (
+      <li
+        className={`pure-menu-item ${
+          currentPage.includes(page.url) ? `pure-menu-selected` : ""
+        }`}
+      >
+        <Link to={page.url} className="pure-menu-link">
+          {page.name}
+        </Link>
+      </li>
+    )
+  })
   return (
     <nav className="Dashboard__sidebar">
       <pure-menu>
-        <ul className="pure-menu-list">
-          <li className="pure-menu-item">
-            <Link to="/getting-started" className="pure-menu-link">
-              Getting Started
-            </Link>
-          </li>
-          <li className="pure-menu-item">
-            <Link to="/" className="pure-menu-link">
-              Components
-            </Link>
-          </li>
-          <li className="pure-menu-item">
-            <Link to="/" className="pure-menu-link">
-              Theming
-            </Link>
-          </li>
-        </ul>
+        <ul className="pure-menu-list">{pageList}</ul>
         <span className="pure-menu-link pure-menu-heading">Components</span>
         <ul className="pure-menu-list">{componentList}</ul>
         <ul className="pure-menu-list">

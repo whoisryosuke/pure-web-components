@@ -15,6 +15,7 @@ export default ({ children, location }) => {
             fields {
               slug
               filename
+              section
             }
           }
         }
@@ -36,7 +37,9 @@ export default ({ children, location }) => {
           currentPage={location.pathname}
           components={data.allMarkdownRemark.edges}
         />
-        <section className="Dashboard__content">{children}</section>
+        <section className="Dashboard__content">
+          <div className="content">{children}</div>
+        </section>
       </main>
     </pure-base>
   )
