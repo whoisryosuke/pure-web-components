@@ -8,3 +8,19 @@
   background: #fff;
   letter-spacing: 0.05em;
 }
+
+@media screen and (min-width: 48em) {
+  .PageHeader h1 {
+    font-size: 320%;
+  }
+
+  .PageHeader h2 {
+    font-size: 128%;
+  }
+
+  .PageHeader h1,
+  .PageHeader h2 {
+    font-weight: 100;
+    margin: 0;
+  }
+}

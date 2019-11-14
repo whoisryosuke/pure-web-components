@@ -2,7 +2,7 @@
  * Fonts
  * --------------------------
 */
-@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,300,700&display=swap');
 
 /* --------------------------
  * Element Styles
@@ -201,7 +201,13 @@ pure-table td {
 }
 
 .Dashboard__content>.content {
-  padding: 1.5em;
+  max-width: 960px;
+  padding: 1em;
+  margin: auto;
+}
+
+.Dashboard__content>.content p:first-child {
+  margin-top: 0;
 }
 
 #sidebarToggle {
@@ -257,11 +263,18 @@ header pure-menu a.pure-menu-heading:hover {
  * --------------------------
 */
 
+.Dashboard__content .content h1,
 .Dashboard__content .content h2,
 .Dashboard__content .content h3 {
   font-weight: 300;
   margin: 2em 0 1em 0;
   color: #888;
+}
+
+.Dashboard__content .content .PageHeader h1,
+.Dashboard__content .content .PageHeader h2 {
+  font-weight: 100;
+  margin: 0;
 }
 
 .Dashboard__content .content p {

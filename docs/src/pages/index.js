@@ -7,10 +7,7 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>
-    <div
-      className="content"
-      style={{ maxWidth: 960, padding: "2em", margin: "auto" }}
-    >
+    <div className="content">
       <SEO title="Home" />
 
       <p style={{ textAlign: "center" }}>
