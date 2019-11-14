@@ -1,20 +1,83 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../layouts/documentation"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
+    <div
+      className="content"
+      style={{ maxWidth: 960, padding: "2em", margin: "auto" }}
+    >
+      <SEO title="Home" />
+
+      <p style={{ textAlign: "center" }}>
+        <img
+          src="/img/logo_pure@2x.png"
+          alt="Pure CSS logo"
+          style={{ width: "50%" }}
+        />
+      </p>
+
+      <h2 style={{ textAlign: "center" }}>
+        A set of small, responsive CSS modules that you can use in every web
+        project.
+      </h2>
+
+      <pre class="code code-wrap" data-language="html" data-trimmed="true">
+        <code class="rainbow">
+          <span class="support tag">
+            <span class="support tag">&lt;</span>
+            <span class="support tag-name">link</span>
+          </span>{" "}
+          <span class="support attribute">rel</span>
+          <span class="support operator">=</span>
+          <span class="string quote">"</span>
+          <span class="string value">stylesheet</span>
+          <span class="string quote">"</span>{" "}
+          <span class="support attribute">href</span>
+          <span class="support operator">=</span>
+          <span class="string quote">"</span>
+          <span class="string value">
+            https://unpkg.com/purecss@1.0.1/build/pure-min.css
+          </span>
+          <span class="string quote">"</span>{" "}
+          <span class="support attribute">integrity</span>
+          <span class="support operator">=</span>
+          <span class="string quote">"</span>
+          <span class="string value">
+            sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47
+          </span>
+          <span class="string quote">"</span>{" "}
+          <span class="support attribute">crossorigin</span>
+          <span class="support operator">=</span>
+          <span class="string quote">"</span>
+          <span class="string value">anonymous</span>
+          <span class="string quote">"</span>
+          <span class="support tag close">&gt;</span>
+        </code>
+        <div class="preloader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </pre>
+
+      <p style={{ textAlign: "center", fontSize: "125%" }}>
+        <pure-button color="primary" class="button-cta" href="/start/">
+          Get Started
+        </pure-button>
+        <pure-button color="secondary" href="https://github.com/pure-css/pure/">
+          View on GitHub
+        </pure-button>
+      </p>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
