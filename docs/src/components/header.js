@@ -5,28 +5,46 @@ import React from "react"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
+      background: `var(--pure-color-primary)`,
+      position: "relative",
     }}
   >
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
       }}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+      <pure-menu
+        horizontal
+        style={{ display: "flex", justifyContent: "space-between" }}
+      >
+        <Link to="/" className="pure-menu-link pure-menu-heading">
           {siteTitle}
         </Link>
-      </h1>
+        <ul className="pure-menu-list">
+          <li className="pure-menu-item">
+            <Link to="/" className="pure-menu-link">
+              Getting Started
+            </Link>
+          </li>
+          <li className="pure-menu-item">
+            <Link to="/" className="pure-menu-link">
+              Components
+            </Link>
+          </li>
+          <li className="pure-menu-item">
+            <Link to="/" className="pure-menu-link">
+              Theming
+            </Link>
+          </li>
+          <li className="pure-menu-item">
+            <Link to="/" className="pure-menu-link">
+              Github
+            </Link>
+          </li>
+        </ul>
+      </pure-menu>
     </div>
   </header>
 )
@@ -36,7 +54,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `Pure Web Components Docs`,
 }
 
 export default Header
