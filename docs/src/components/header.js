@@ -63,6 +63,8 @@ const Header = ({ siteTitle }) => {
                   })
                 }
                 className={`menu-link ${sidebar ? "" : "active"}`}
+                aria-expanded={sidebar ? "true" : "false"}
+                aria-controls="PrimarySidebar"
               >
                 <span></span>
               </button>

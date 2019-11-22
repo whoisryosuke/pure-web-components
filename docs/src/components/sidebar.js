@@ -80,7 +80,10 @@ const Sidebar = ({ components, currentPage }) => {
   // User can manually hide sidebar (uses context)
   const hideSidebar = sidebar ? "hide" : "visible"
   return (
-    <nav className={`Dashboard__sidebar ${isScrolled} ${hideSidebar}`}>
+    <nav
+      id="PrimarySidebar"
+      className={`Dashboard__sidebar ${isScrolled} ${hideSidebar}`}
+    >
       <pure-menu>
         <ul className="pure-menu-list">{pageList}</ul>
         <span className="pure-menu-link pure-menu-heading">Components</span>
