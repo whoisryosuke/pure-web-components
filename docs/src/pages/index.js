@@ -1,13 +1,11 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../layouts/documentation"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = ({ location }) => (
   <Layout location={location}>
-    <div className="content">
+    <div style={{ marginTop: "3em" }}>
       <SEO title="Home" />
 
       <p style={{ textAlign: "center" }}>

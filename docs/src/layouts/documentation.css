@@ -85,24 +85,13 @@ aside a:visited {
 
 header.SiteHeader {
   width: 100%;
-  font-family: "Raleway",
-    "Helvetica Neue",
-    Helvetica,
-    Arial,
-    sans-serif;
-  letter-spacing: 0.05em;
   background: var(--pure-color-dark-background);
   position: fixed;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
-  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   will-change: transform;
-  transition-duration: .5s;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-property: transform;
-  transition-property: transform,
-    -webkit-transform;
+  transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+  z-index: 420;
 }
 
 header.SiteHeader.scrolled {
@@ -127,7 +116,7 @@ header.SiteHeader.scrolled {
 
 header.SiteHeader>div {
   margin: 0 auto;
-  padding: 1.45rem 1.0875rem;
+  padding: 0.25em 1rem;
 }
 
 
@@ -144,6 +133,12 @@ header.SiteHeader pure-menu {
 }
 
 header.SiteHeader h1 {
+  font-family: "Raleway",
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  letter-spacing: 0.05em;
   color: var(--pure-color-light-90);
   font-size: 150%;
   font-weight: 100;
@@ -152,7 +147,7 @@ header.SiteHeader h1 {
 
 @media screen and (min-width: 1025px) {
   header.SiteHeader .pure-mobile-menu-btn {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -246,14 +241,23 @@ code {
 }
 
 .code {
-  margin-left: -1em;
-  margin-right: -1em;
+  margin-left: -3em;
+  margin-right: -3em;
   padding: 1em;
   border: 1px solid #eee;
   border-left-width: 0;
   border-right-width: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 1025px) {
+
+  /* Extra padding since content adds extra */
+  .code {
+    margin-left: -2em;
+    margin-right: -2em;
+  }
 }
 
 .code code {
@@ -295,12 +299,12 @@ pure-table td {
   left: 0;
   margin: 0 !important;
   padding-top: 1em;
-  transform: translate(-250px, 100px);
+  transform: translate(-250px, 3.75em);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   will-change: transform;
   transition: transform 400ms cubic-bezier(.4, 0, .2, 1);
-  z-index: 5;
+  z-index: 710;
 }
 
 .Dashboard__sidebar.scrolled {
@@ -308,26 +312,39 @@ pure-table td {
 }
 
 .Dashboard__sidebar.visible {
-  transform: translate(0, 0);
+  transform: translate(0, 3.75em);
 }
 
 .Dashboard__sidebar.hide {
-  transform: translate(-250px, 0);
+  transform: translate(-250px, 3.75em);
 }
 
 .Dashboard__content {
   margin-left: 240px !important;
-  padding-top: 100px;
+  padding-top: 3.75em;
   min-height: calc(100vh);
   background-color: var(--pure-color-light-100);
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 1025px) {
+  .Dashboard__content {
+    padding-top: 145px;
+  }
+}
+
 .Dashboard__content>.content {
   max-width: 960px;
-  padding: 1em;
+  padding: 1em 3em;
   margin: auto;
 }
+
+@media screen and (max-width: 1025px) {
+  .Dashboard__content>.content {
+    padding: 2em;
+  }
+}
+
 
 .Dashboard__content>.content p:first-child {
   margin-top: 0;
@@ -339,7 +356,7 @@ pure-table td {
 
 @media screen and (max-width: 480px) {
   .Dashboard__sidebar.visible {
-    transform: translate(0, 100px);
+    transform: translate(0, 3.75em);
   }
 
 }
@@ -354,11 +371,11 @@ pure-table td {
 
   .Dashboard__sidebar.visible,
   .Dashboard__sidebar.hide {
-    transform: translate(0, 100px);
+    transform: translate(0, 3.75em);
   }
 
   .Dashboard__sidebar {
-    transform: translate(0, 100px);
+    transform: translate(0, 3.75em);
   }
 
   #sidebarToggle {

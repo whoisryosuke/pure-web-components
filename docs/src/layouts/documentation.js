@@ -9,7 +9,7 @@ import "./documentation.css"
 
 export default ({ children, location }) => {
   const initialState = {
-    sidebar: false,
+    sidebar: true,
   }
 
   const reducer = (state, action) => {
