@@ -24,12 +24,7 @@ const Header = ({ siteTitle }) => {
   }, [siteTitle])
   return (
     <header className={`SiteHeader ${scrollPosition > 100 ? "scrolled" : ""}`}>
-      <div
-        style={{
-          margin: `0 auto`,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
+      <div>
         <pure-menu horizontal>
           <Link to="/" className="pure-menu-link pure-menu-heading">
             <h1>PURE</h1>
@@ -51,18 +46,6 @@ const Header = ({ siteTitle }) => {
               </Link>
             </li>
             <li className="pure-menu-item">
-              <button
-                onClick={() =>
-                  dispatch({
-                    type: "toggleSidebar",
-                    newSidebar: !sidebar,
-                  })
-                }
-              >
-                {sidebar ? "True" : "False"}
-              </button>
-            </li>
-            <li className="pure-menu-item">
               <a
                 href="https://github.com/whoisryosuke/pure-web-components"
                 className="pure-menu-link"
@@ -70,6 +53,19 @@ const Header = ({ siteTitle }) => {
               >
                 Github
               </a>
+            </li>
+            <li className="pure-menu-item pure-mobile-menu-btn">
+              <button
+                onClick={() =>
+                  dispatch({
+                    type: "toggleSidebar",
+                    newSidebar: !sidebar,
+                  })
+                }
+                className={`menu-link ${sidebar ? "" : "active"}`}
+              >
+                <span></span>
+              </button>
             </li>
           </ul>
         </pure-menu>

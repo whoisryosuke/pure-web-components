@@ -125,10 +125,22 @@ header.SiteHeader.scrolled {
   }
 }
 
+header.SiteHeader>div {
+  margin: 0 auto;
+  padding: 1.45rem 1.0875rem;
+}
+
 
 header.SiteHeader pure-menu {
   display: flex;
   justify-content: space-between;
+}
+
+@media screen and (max-width: 1025px) {
+
+  header.SiteHeader pure-menu {
+    flex-direction: column;
+  }
 }
 
 header.SiteHeader h1 {
@@ -137,6 +149,77 @@ header.SiteHeader h1 {
   font-weight: 100;
   margin: 0;
 }
+
+@media screen and (min-width: 1025px) {
+  header.SiteHeader .pure-mobile-menu-btn {
+    display: none;
+  }
+}
+
+
+
+/* --------------------------
+ * Hamburger Icon for Header
+ * --------------------------
+*/
+
+.menu-link {
+  display: block;
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+  /* change this value to increase/decrease button size */
+  z-index: 10;
+  width: 4em;
+  height: 4em;
+  padding: 1em;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  background: #000;
+}
+
+.menu-link span {
+  position: relative;
+  display: block;
+}
+
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+  background-color: #fff;
+  width: 100%;
+  height: .2em;
+  transition: all 0.4s;
+}
+
+.menu-link span:before,
+.menu-link span:after {
+  position: absolute;
+  top: -.55em;
+  left: 0;
+  content: " ";
+}
+
+.menu-link span:after {
+  top: .55em;
+  left: 0;
+}
+
+.menu-link.active span {
+  background: transparent;
+}
+
+.menu-link.active span:before {
+  transform: rotate(45deg) translate(.5em, .4em);
+}
+
+.menu-link.active span:after {
+  transform: rotate(-45deg) translate(.4em, -.3em);
+}
+
+
 
 /* --------------------------
  * Code Styles
