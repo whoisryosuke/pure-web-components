@@ -190,6 +190,6 @@ You can enable more grids by editing [pure-grid.scss](src/components/pure-grid/p
 - [] `<pure-menu>` CSS dropdowns
 - ✅ `<pure-table>` component + story examples
 - [] `<pure-button-group>` component + swap out in other component stories
-- [] Create documentation
+- ✅ Create documentation
 - - ✅ Test out Storybook Docs and MDX
-- - [] Test out Gatsby using StencilJS and JSON output
+- - ✅ Test out Gatsby using StencilJS and JSON output
