@@ -59,7 +59,8 @@ export class PureButton {
         <TagType
           class={{
             "pure-button": true,
-            [color]: color !== undefined
+            [color]: color !== undefined,
+            disabled: disabled
           }}
           aria-disabled={disabled ? "true" : null}
           type={type}
