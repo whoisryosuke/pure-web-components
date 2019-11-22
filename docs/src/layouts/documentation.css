@@ -164,6 +164,9 @@ header.SiteHeader h1 {
 */
 
 .menu-link {
+  position: fixed;
+  top: 1.45rem;
+  right: 1.0875rem;
   display: block;
   border: 0;
   background: transparent;
