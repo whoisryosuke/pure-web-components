@@ -1,35 +1,25 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
+# Pure Web Components Documentation
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+Documentation for Pure Web Components using GatsbyJS and ReactJS. Automatically generates a full documentation PWA for StencilJS built Web Components.
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Build components.**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    Navigate to the project folder and run the StencilJS build process:
 
     ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    cd pure-web-components/
+    yarn build
     ```
 
 1.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate to the docs and spin up the GatsbyJS server:
 
     ```shell
-    cd my-default-starter/
-    gatsby develop
+    cd pure-web-components/docs/
+    yarn develop
     ```
 
 1.  **Open the source code and start editing!**
@@ -38,7 +28,29 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `pure-web-components/docs/` directory in your code editor of choice and edit `src/pages/index.md`. Save your changes and the browser will update in real time!
+
+## ⚙️ How it works
+
+When you run `yarn develop` it copies over your built web components from the parent folder, then runs `gatsby develop` (which spins up a Gatsby powered development server).
+
+Gatsby is setup to primarily use Markdown -- either directly from the component folders (the auto-generated Stencil docs) or inside Gatsby's `/pages/` directory. Gatsby will create a page for each component that has a Markdown file. And in the pages directory, you can find pages like the [site index](./src/pages/index.md), or [Getting Started guide](./src/pages/getting-started.md).
+
+## Using Web Components
+
+The Pure Web Components are imported into every Gatsby page, so you can use them in any Markdown, React/JS, or HTML file.
+
+> If you use the Markdown syntax for tables, the Markdown compiler will automatically use the Pure Web Component version.
+
+### Custom Components
+
+There are also various custom components created to make writing and formatting documentation easier.
+
+- `<page-header header={header} subheader={subheader}>` - Used for documentation page headings with a large heading and smaller subheader.
+
+These components can be used anywhere in Markdown files, cannot be used in HTML files, or require importing of the component directly in React (e.g. `import PageHeader from '../components/pageHeader'`).
+
+> You can create new components by adding them to [the Component Docs template](./src/templates/component-docs.js) that is used to render Markdown pages.
 
 ## 🧐 What's inside?
 
@@ -92,6 +104,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/whoisryosuke/pure-web-components)
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+1. Click Deploy to Netlify
+1. Set build command to `cd docs && npm run build`
