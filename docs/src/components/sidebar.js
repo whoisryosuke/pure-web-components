@@ -1,7 +1,27 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
+import throttle from "../utils/throttle"
+import { useSidebarValue } from "../context/SidebarContext"
 
-export default function sidebar({ components, currentPage }) {
+const Sidebar = ({ components, currentPage }) => {
+  const [scrollPosition, updateScrollPosition] = useState()
+  const [{ sidebar }, dispatch] = useSidebarValue()
+
+  const changeScroll = () => {
+    updateScrollPosition(document.documentElement.scrollTop)
+  }
+
+  const checkScroll = () => {
+    throttle(changeScroll(), 100)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", checkScroll)
+    return () => {
+      window.removeEventListener("scroll", checkScroll)
+    }
+  }, [currentPage])
+
   const pages = [
     {
       name: "Getting Started",
@@ -54,8 +74,13 @@ export default function sidebar({ components, currentPage }) {
       </li>
     )
   })
+
+  // Has the user scrolled enough to hide header?
+  const isScrolled = scrollPosition > 100 ? "scrolled" : ""
+  // User can manually hide sidebar (uses context)
+  const hideSidebar = sidebar ? "hide" : "visible"
   return (
-    <nav className="Dashboard__sidebar">
+    <nav className={`Dashboard__sidebar ${isScrolled} ${hideSidebar}`}>
       <pure-menu>
         <ul className="pure-menu-list">{pageList}</ul>
         <span className="pure-menu-link pure-menu-heading">Components</span>
@@ -75,3 +100,5 @@ export default function sidebar({ components, currentPage }) {
     </nav>
   )
 }
+
+export default Sidebar

@@ -84,6 +84,7 @@ aside a:visited {
 */
 
 header.SiteHeader {
+  width: 100%;
   font-family: "Raleway",
     "Helvetica Neue",
     Helvetica,
@@ -91,8 +92,39 @@ header.SiteHeader {
     sans-serif;
   letter-spacing: 0.05em;
   background: var(--pure-color-dark-background);
-  position: relative;
+  position: fixed;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition-duration: .5s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-property: transform;
+  transition-property: transform,
+    -webkit-transform;
 }
+
+header.SiteHeader.scrolled {
+  -webkit-transform: translateY(-120px);
+  transform: translateY(-120px);
+}
+
+@media screen and (max-width: 1025px) {
+  header.SiteHeader.scrolled {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+  header.SiteHeader.scrolled {
+    -webkit-transform: translateY(-120px);
+    transform: translateY(-120px);
+  }
+}
+
 
 header.SiteHeader pure-menu {
   display: flex;
@@ -173,31 +205,36 @@ pure-table td {
   height: 100%;
   max-height: 100%;
   background-color: var(--pure-color-dark-background);
-  position: absolute;
+  position: fixed;
   left: 0;
   margin: 0 !important;
   padding-top: 1em;
-  -webkit-transform: translateX(-250px);
-  transform: translateX(-250px);
+  transform: translate(-250px, 100px);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   will-change: transform;
-  transition-duration: .2s;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
+  transition: transform 400ms cubic-bezier(.4, 0, .2, 1);
   z-index: 5;
 }
 
+.Dashboard__sidebar.scrolled {
+  transform: translate(-250px, 0);
+}
+
 .Dashboard__sidebar.visible {
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
+  transform: translate(0, 0);
+}
+
+.Dashboard__sidebar.hide {
+  transform: translate(-250px, 0);
 }
 
 .Dashboard__content {
   margin-left: 240px !important;
+  padding-top: 100px;
   min-height: calc(100vh);
   background-color: var(--pure-color-light-100);
+  overflow-x: hidden;
 }
 
 .Dashboard__content>.content {
@@ -214,10 +251,28 @@ pure-table td {
   display: block;
 }
 
+@media screen and (max-width: 480px) {
+  .Dashboard__sidebar.visible {
+    transform: translate(0, 100px);
+  }
+
+}
+
 @media screen and (min-width: 1025px) {
+
+  .Dashboard__sidebar.scrolled,
+  .Dashboard__sidebar.scrolled.visible,
+  .Dashboard__sidebar.scrolled.hide {
+    transform: translate(0, 0);
+  }
+
+  .Dashboard__sidebar.visible,
+  .Dashboard__sidebar.hide {
+    transform: translate(0, 100px);
+  }
+
   .Dashboard__sidebar {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    transform: translate(0, 100px);
   }
 
   #sidebarToggle {
