@@ -2,8 +2,7 @@ import { Component, Host, Prop, h } from "@stencil/core";
 
 @Component({
   tag: "pure-grid",
-  styleUrl: "pure-grid.scss",
-  shadow: true
+  styleUrl: "pure-grid.scss"
 })
 export class PureGrid {
   /**
