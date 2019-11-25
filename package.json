@@ -32,7 +32,9 @@
     "test:watch": "stencil test --spec --watch",
     "story": "npm-run-all --parallel start storybook",
     "story:test": "npm run test:generate && npm run story",
-    "storybook": "start-storybook -p 9001 -c .storybook -s www"
+    "story:build": "npm-run-all --parallel build storybook:build",
+    "storybook": "start-storybook -p 9001 -c .storybook -s www",
+    "storybook:build": "build-storybook -c .storybook -o .out"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
