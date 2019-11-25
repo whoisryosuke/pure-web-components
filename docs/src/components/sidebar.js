@@ -98,6 +98,15 @@ const Sidebar = ({ components, currentPage }) => {
               Github
             </a>
           </li>
+          <li className="pure-menu-item">
+            <a
+              href="https://pure-web-components-storybook.netlify.com/"
+              className="pure-menu-link"
+              target="_blank"
+            >
+              Storybook
+            </a>
+          </li>
         </ul>
       </pure-menu>
     </nav>
