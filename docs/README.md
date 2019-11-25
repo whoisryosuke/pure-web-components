@@ -107,4 +107,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/whoisryosuke/pure-web-components)
 
 1. Click Deploy to Netlify
-1. Set build command to `cd docs && npm run build`
+1. Set build path to `docs`
+1. Set build command to `npm run build`
+
+> Doesn't actually work at the moment because Gatsby docs use the `/dist/` folder, which isn't included in repo. This requires a build, which means Netlify would have to use the parent Stencil directory, run the build process, then go into the docs folder, install any dependencies, and then finally run the build process. At this point it's easier to just run things locally, verify, and then upload the Gatsby build to Netlify directly. This will be resolved once the `pure-web-components` package is listed on NPM (or CDN) and Gatsby can use that as a dependency (or Yarn Workspaces for local development of a relative package) instead of the `/dist/` folder directly.
