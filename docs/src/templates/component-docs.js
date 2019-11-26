@@ -9,6 +9,7 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query below.
   location,
 }) {
+  // Customize the Markdown components here
   const renderAst = new rehypeReact({
     createElement: React.createElement,
     components: {
@@ -16,10 +17,15 @@ export default function Template({
       "page-header": PageHeader,
     },
   }).Compiler
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+
+  const { markdownRemark } = data
   const { fields, frontmatter, htmlAst } = markdownRemark
+
+  // Determine page title based on section
+  // If components, we use filename to mimic web component style
+  // Otherwise it's probably a page, so display the nicer frontmatter title
   let pageTitle
-  if (fields.section) {
+  if (fields.section && fields.section == "components") {
     pageTitle = fields.filename.replace("/", "")
   } else {
     pageTitle = frontmatter && frontmatter.title

@@ -9,7 +9,7 @@ import "./documentation.css"
 export default ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      allMarkdownRemark {
+      sidebar: allMarkdownRemark {
         edges {
           node {
             fields {
@@ -20,11 +20,17 @@ export default ({ children, location }) => {
           }
         }
       }
+      title: site {
+        siteMetadata {
+          title
+        }
+      }
     }
   `)
   return (
     <pure-base>
       <Helmet>
+        <title>{data.title.siteMetadata.title}</title>
         <script
           type="module"
           src="/dist/pure-web-components/pure-web-components.esm.js"
@@ -35,7 +41,7 @@ export default ({ children, location }) => {
       <main className="Dashboard">
         <Sidebar
           currentPage={location.pathname}
-          components={data.allMarkdownRemark.edges}
+          components={data.sidebar.edges}
         />
         <section className="Dashboard__content">
           <div className="content">{children}</div>
