@@ -5,17 +5,25 @@
 <a href="https://pure-web-components-storybook.netlify.com/"><img src="https://github.com/storybookjs/brand/raw/master/badge/badge-storybook.svg?sanitize=true" alt="Browse our Storybook" /></a>
 </p>
 
-# Pure Web Components
+# About Pure Web Components
 
-Web Components inspired by [Pure CSS](https://purecss.io).
+Web Components inspired by [Pure CSS](https://purecss.io). 6 web components in 37KBs of uncompressed JS _(without CSS or optional polyfills)_.
+
+# Components
+
+- [Base](https://pure-web-components.netlify.com/components/pure-base/)
+- [Button](https://pure-web-components.netlify.com/components/pure-button/)
+- [Form](https://pure-web-components.netlify.com/components/pure-form/)
+- [Grid](https://pure-web-components.netlify.com/components/pure-grid/)
+- [Menu](https://pure-web-components.netlify.com/components/pure-menu/)
+- [Table](https://pure-web-components.netlify.com/components/pure-table/)
 
 # Features
 
 - 🎛 6 minimal components
-- 🌑 Shadow DOM
 - 🎨 Theming using CSS Variables
 - 💄 SASS/SCSS
-- 🌲 Works in any modern browser (see here)
+- 🌲 Works in any modern browser [(see here)](#creating-new-components)
 - 📲 E2E testing
 - 📸 Snapshot testing
 - 📘 Storybook
