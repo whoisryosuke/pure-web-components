@@ -228,11 +228,9 @@ pre,
 code {
   font-family: Consolas, Courier, monospace;
   color: #333;
-  background: rgb(250, 250, 250);
 }
 
 code {
-  padding: 0.2em 0.4em;
   white-space: nowrap;
 }
 
@@ -349,9 +347,10 @@ pure-table td {
 .Dashboard__content>.content p:first-child {
   margin-top: 0;
 }
+
 /* Make sure we keep margins for aside boxes */
 .Dashboard__content>.content aside p:first-child {
-  margin:1em;
+  margin: 1em;
 }
 
 #sidebarToggle {
@@ -447,64 +446,6 @@ pure-table {
   width: 100%;
 }
 
-
-/**
- * Baby Blue theme for RainbowJS
- *
- * @author tilomitra
- */
-
-pre .comment {
-  color: #999;
-}
-
-pre .tag,
-pre .tag-name,
-pre .support.tag-name {
-  color: rgb(85, 85, 85);
-}
-
-pre .keyword,
-pre .css-property,
-pre .vendor-prefix,
-pre .sass,
-pre .class,
-pre .id,
-pre .css-value,
-pre .entity.function,
-pre .storage.function {
-  font-weight: bold;
-}
-
-pre .css-property,
-pre .css-value,
-pre .vendor-prefix,
-pre .support.namespace {
-  color: #333;
-}
-
-pre .constant.numeric,
-pre .keyword.unit,
-pre .hex-color {
-  font-weight: normal;
-  color: #099;
-}
-
-pre .attribute,
-pre .variable,
-pre .support {
-  color: #757575;
-  /* skinbuilder block-page-text-normal with #1f8dd6 as primary */
-}
-
-pre .string,
-pre .support.value {
-  font-weight: normal;
-  color: #3b8bba;
-  /* skinbuilder block-mine-text-low with #1f8dd6 as primary */
-}
-
-
 /* --------------------------
  * Page Specific CSS
  * --------------------------
@@ -517,103 +458,112 @@ pre .support.value {
  * --------------------------
 */
 .size-chart {
-  display:flex;
+  display: flex;
   width: 100%;
   font-size: 87.5%;
   line-height: 1.4;
   margin-bottom: 2em;
 }
 
-    a.size-chart-item {
-        display: block;
-        color: #fff;
-        padding: 1.45em 0;
-        text-align: center;
-        text-decoration: none;
-        text-transform: capitalize;
-    }
+a.size-chart-item {
+  display: block;
+  color: #fff;
+  padding: 1.45em 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+}
 
-    .size-chart-label {
-        display: inline-block;
-        -webkit-transform: rotate(-90deg);
-        -moz-transform:    rotate(-90deg);
-        -ms-transform:     rotate(-90deg);
-        -o-transform:      rotate(-90deg);
-    }
-    .size-chart-size {
-        display: none;
-    }
+.size-chart-label {
+  display: inline-block;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
 
-    .size-chart-base {
-        background: #1f8dd6;
-    }
-        .size-chart-base .size-chart-size {
-            color: rgb(103, 194, 240);
-        }
+.size-chart-size {
+  display: none;
+}
 
-    .size-chart-grids {
-        background: rgb(128, 88, 165);
-    }
-        .size-chart-grids .size-chart-size {
-            color: rgb(200, 131, 255);
-        }
+.size-chart-base {
+  background: #1f8dd6;
+}
 
-    .size-chart-forms {
-        background: #5eb95e;
-    }
+.size-chart-base .size-chart-size {
+  color: rgb(103, 194, 240);
+}
 
-        .size-chart-forms .size-chart-size {
-            color: rgb(161, 240, 137);
-        }
+.size-chart-grids {
+  background: rgb(128, 88, 165);
+}
 
-    .size-chart-buttons {
-        background: #dd514c;
-    }
+.size-chart-grids .size-chart-size {
+  color: rgb(200, 131, 255);
+}
 
-        .size-chart-buttons .size-chart-size {
-            color: rgb(236, 164, 154);
-        }
+.size-chart-forms {
+  background: #5eb95e;
+}
 
-    .size-chart-menus {
-        background: rgb(250, 210, 50);
-    }
-        .size-chart-menus .size-chart-size {
-            color: rgb(255, 240, 134);
-        }
+.size-chart-forms .size-chart-size {
+  color: rgb(161, 240, 137);
+}
 
-    .size-chart-tables {
-        background: rgb(243, 123, 29);
-    }
-        .size-chart-tables .size-chart-label {
-            margin-left: -0.5em;
-        }
-        .size-chart-tables .size-chart-size {
-            color: rgb(255, 190, 129);
-        }
+.size-chart-buttons {
+  background: #dd514c;
+}
+
+.size-chart-buttons .size-chart-size {
+  color: rgb(236, 164, 154);
+}
+
+.size-chart-menus {
+  background: rgb(250, 210, 50);
+}
+
+.size-chart-menus .size-chart-size {
+  color: rgb(255, 240, 134);
+}
+
+.size-chart-tables {
+  background: rgb(243, 123, 29);
+}
+
+.size-chart-tables .size-chart-label {
+  margin-left: -0.5em;
+}
+
+.size-chart-tables .size-chart-size {
+  color: rgb(255, 190, 129);
+}
 
 @media screen and (min-width: 30em) {
-    .size-chart-tables .size-chart-label {
-        margin-left: 0;
-    }
+  .size-chart-tables .size-chart-label {
+    margin-left: 0;
+  }
 }
 
 @media screen and (min-width: 48em) {
-    .size-chart {
-        font-size: 100%;
-    }
-    a.size-chart-item {
-        padding: 0.5em;
-        text-align: left;
-    }
-    .size-chart-label {
-        -webkit-transform: none;
-        -moz-transform:    none;
-        -ms-transform:     none;
-        -o-transform:      none;
-    }
-    .size-chart-size {
-        display: block;
-    }
+  .size-chart {
+    font-size: 100%;
+  }
+
+  a.size-chart-item {
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  .size-chart-label {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+
+  .size-chart-size {
+    display: block;
+  }
 }
 
 /* --------------------------
@@ -623,21 +573,21 @@ pre .support.value {
  * --------------------------
 */
 .grids-example {
-    background: rgb(250, 250, 250);
-    margin: 2em auto;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+  background: rgb(250, 250, 250);
+  margin: 2em auto;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .grids-example pure-grid {
-    display: flex;
+  display: flex;
 }
 
-.grids-example [class *= "pure-u"] {
-    font-family: Consolas, 'Liberation Mono', Courier, monospace;
-    text-align: center;
-    padding: 1em 0;
-    border: 1px solid #ddd;
-    border-right: none;
-    border-bottom: none;
+.grids-example [class *="pure-u"] {
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  text-align: center;
+  padding: 1em 0;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-bottom: none;
 }
