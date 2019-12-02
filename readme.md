@@ -39,6 +39,12 @@ You can find [the documentation for all the web components in this library here.
 
 # Getting Started
 
+- Run `npm install pure-web-components --save`
+- Put a script tag similar to this `<script src='node_modules/pure-web-components/dist/pure-web-components.js'></script>` in the head of your index.html or app's root
+- Then you can use the element anywhere in your template, JSX, HTML etc
+
+## Developing Components
+
 ```bash
 git clone https://github.com/whoisryosuke/pure-web-components.git
 cd pure-web-components
@@ -64,7 +70,7 @@ yarn test
 
 You will be prompted by the Stencil CLI about what files you'd like to generate, then it'll output the component into your `src/components/` folder.
 
-## Using these components
+## Using components
 
 ### Script tag
 
@@ -123,7 +129,7 @@ render() {
 
 ## Customizing the grid
 
-Pure Web Components comes preloaded with 2-8, 12, and 24 column grids using class names formatted like `.pure-u-1-4` (1/4 width or 1 part of a 4 column grid).
+Pure Web Components comes preloaded with 2-8, 12, and 24 column grids using CSS class names formatted like `.pure-u-1-4` (1/4 width or 1 part of a 4 column grid).
 
 There are also responsive classes that use CSS media queries to only set the column width for certain viewports. For example, this button will be 1/2 width at mobile, or 1/3 at higher viewports: `<div class="pure-u-sm-1-2 pure-u-md-1-3">`. These classes require many viewport variations (each grid x column number x viewports = a lot of unused CSS without PurgeCSS). Because of this, only 2-5 and 12 columns are available responsively.
 
@@ -151,3 +157,9 @@ You can enable more grids by editing [pure-grid.scss](src/components/pure-grid/p
 - - [] Dark Mode
 - - [] Bootstrap
 - - [] Semantic UI
+
+# Credits
+
+- [Pure CSS](http://purecss.io)
+- [StencilJS](http://stenciljs.com)
+- [GatsbyJS](http://gatsbyjs.org)
