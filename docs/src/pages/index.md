@@ -23,7 +23,7 @@ date: "2019-11-22"
         <a class="size-chart-item" href="/base/">
             <span class="size-chart-label">
                 <span class="size-chart-mod">base</span>
-                <span class="size-chart-size">1.1KB</span>
+                <span class="size-chart-size">8KB</span>
             </span>
         </a>
     </div>
@@ -31,7 +31,7 @@ date: "2019-11-22"
         <a class="size-chart-item" href="/grids/">
             <span class="size-chart-label">
                 <span class="size-chart-mod">grids</span>
-                <span class="size-chart-size">0.8KB</span>
+                <span class="size-chart-size">15KB</span>
             </span>
         </a>
     </div>
@@ -39,7 +39,7 @@ date: "2019-11-22"
         <a class="size-chart-item" href="/forms/">
             <span class="size-chart-label">
                 <span class="size-chart-mod">forms</span>
-                <span class="size-chart-size">1.4KB</span>
+                <span class="size-chart-size">8KB</span>
             </span>
         </a>
     </div>
@@ -47,7 +47,7 @@ date: "2019-11-22"
         <a class="size-chart-item" href="/buttons/">
             <span class="size-chart-label">
                 <span class="size-chart-mod">buttons</span>
-                <span class="size-chart-size">0.8KB</span>
+                <span class="size-chart-size">3KB</span>
             </span>
         </a>
     </div>
@@ -55,7 +55,7 @@ date: "2019-11-22"
         <a class="size-chart-item" href="/tables/">
             <span class="size-chart-label">
                 <span class="size-chart-mod">tables</span>
-                <span class="size-chart-size">0.5KB</span>
+                <span class="size-chart-size">4KB</span>
             </span>
         </a>
     </div>
@@ -63,7 +63,7 @@ date: "2019-11-22"
         <a class="size-chart-item" href="/menus/">
             <span class="size-chart-label">
                 <span class="size-chart-mod">menus</span>
-                <span class="size-chart-size">0.8KB</span>
+                <span class="size-chart-size">4KB</span>
             </span>
         </a>
     </div>
