@@ -67,6 +67,12 @@
   },
   "license": "BSD",
   "dependencies": {
+    "husky": "^4.2.1",
     "normalize.css": "^8.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
+    }
   }
 }
